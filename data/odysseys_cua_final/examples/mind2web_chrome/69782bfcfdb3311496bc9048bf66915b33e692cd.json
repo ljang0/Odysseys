@@ -1,0 +1,51 @@
+{
+  "id": "69782bfcfdb3311496bc9048bf66915b33e692cd",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to pick a Pilates place in the Fresno/Clovis area and want something concrete I can actually compare on screen, not just a vague list. Please start on Google and find at least two Pilates studios in Clovis, California that clearly offer classes, then open each studio’s actual schedule or booking page in its own tab and leave those tabs open so I can look at the class calendars myself later. Once you’ve got those Clovis options, broaden it into a short Fresno-area comparison by finding at least three Pilates class options around Fresno or Clovis, with each studio’s real schedule or booking link, because I want to see what nearby choices exist if the Clovis spots don’t fit my schedule. After that, go to Title 29 Fitness’s website and figure out what it offers in Fresno, especially anything relevant to Pilates or group fitness, and capture the class schedule details shown there; if there’s a schedule page or booking flow, open that too so I have visual proof it’s current. In the end, give me one concise comparison that includes the two Clovis studios, the broader Fresno-area list, and where Title 29 seems to fit among them based on what you actually saw in the browser.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "easy"
+  }
+}

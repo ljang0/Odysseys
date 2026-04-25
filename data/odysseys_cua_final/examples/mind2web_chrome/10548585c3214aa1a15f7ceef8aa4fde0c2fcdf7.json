@@ -1,0 +1,51 @@
+{
+  "id": "10548585c3214aa1a15f7ceef8aa4fde0c2fcdf7",
+  "snapshot": "chrome",
+  "instruction": "I’m putting together a quick set of Chromebook help notes for someone who keeps asking me whether they can use Firefox instead of Chrome and whether they can still get to their saved Apple passwords when they’re in Chrome, so could you check a few things in a real browser for me? Start on Mozilla’s official Firefox site and open the actual Chromebook or ChromeOS instructions so you can confirm whether Firefox can really be installed there and what Mozilla says the install method is; leave that page open because I want the official wording as a reference. Then go to the Chrome Web Store and find the official iCloud Passwords extension from Apple, open the actual listing page, and verify from the page itself that it’s for accessing iCloud passwords in Chrome; keep that tab open too so I can see the publisher and listing URL. Since these notes should also cover a Google Docs issue they run into all the time, use Google Search to look up reliable troubleshooting for images in Google Docs that show an exclamation mark or refuse to load, then open a useful result and pull out the recommended fixes. After that, open the UserTesting contributor sign-in page so I can confirm a normal login screen is reachable for a site where saved credentials might matter, then in another tab open Patreon’s homepage just to verify ordinary browsing works there too and leave both tabs open so I can compare them. Finally, go to YouTube, open the video titled \"Youtube Rewind 2011,\" start playback, and tell me what you see in the first moments so I know media playback works in the browser. At the end, give me a concise summary of what you confirmed on each site, including the Firefox Chromebook answer, the iCloud Passwords extension name and listing URL, the Google Docs image fixes, and whether UserTesting, Patreon, and YouTube all behaved normally.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 7,
+    "level": "easy"
+  }
+}

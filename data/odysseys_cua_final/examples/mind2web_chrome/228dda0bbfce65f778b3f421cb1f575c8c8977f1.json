@@ -1,0 +1,51 @@
+{
+  "id": "228dda0bbfce65f778b3f421cb1f575c8c8977f1",
+  "snapshot": "chrome",
+  "instruction": "I’m thinking about applying for teaching jobs around Athens, Georgia, and I don’t want a one-site skim — I want a real shortlist of the best districts or public-school employers to target for a future hiring cycle. Please start with Clarke County’s SchoolSpring employer page so we anchor on the local district correctly, then build out a comparison of exactly 8 school districts or public-school employers that are in Athens or within about a 45-minute drive of downtown Athens. For each one, use public pages only to find the employer name, the main jobs or careers page, whether certified teacher openings are currently visible, one representative teaching opening if shown, the current salary schedule for a new certified teacher if posted, key benefits or perks if posted, the school calendar or work-year clues if posted, and a rough drive time from downtown Athens. Also pull one public school-quality signal for each district, like the state report card, district profile, or another credible public source, and write \"not shown\" for anything you can’t verify publicly. Put the 8 employers into one clean comparison sheet or document so I can scan them side by side, then rank the best 5 districts for me to apply to with short reasons that balance pay, likely openings, commute, and overall district fit. Keep the most useful evidence visible in the browser by leaving open the career page and salary page for each of your top 5 picks, plus at least 2 representative job-posting tabs from the strongest options.",
+  "source": "https://clarke.schoolspring.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://clarke.schoolspring.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://clarke.schoolspring.com",
+    "reference_length": 14,
+    "level": "hard"
+  }
+}

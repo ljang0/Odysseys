@@ -1,0 +1,51 @@
+{
+  "id": "8f005e9f09101dd540f1f666063483931e8faa59",
+  "snapshot": "chrome",
+  "instruction": "I’m helping a family get settled in Raleigh, North Carolina, and I want to line up both healthcare and childcare in one pass so they have real options to review on screen. Please start with Google and figure out three major health insurance plans that are actually relevant in Raleigh, then use the official insurer sites for Aetna, Blue Cross NC, and UnitedHealthcare to open each plan’s consumer overview page in its own tab and also open the matching provider directory or doctor search page in its own tab, because I want to be able to look at both the plan details and the network search later. Once those networks are confirmed, use the insurer directories and actual doctor profile pages to find at least 10 pediatricians in Raleigh who accept one or more of those plans; for every pediatrician you include, open the real profile or listing page in its own tab and verify both the accepted insurance and the clinic location so I can inspect the pages myself. After that, switch to childcare and use Google to find around 10 daycare centers in Raleigh, then open the actual daycare page, official site, or a reputable listing page for each one in its own tab and verify the age range served and the location, because I need to compare realistic options for a family with young kids. Please keep all the pediatrician and daycare tabs open as proof, and at the end give me a structured report with three sections for the insurance plans, the pediatricians who take those plans, and the daycare options, plus a short judgment on which insurance plan seems to have the biggest pediatrician network in Raleigh and which daycare centers look the most highly rated.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 9,
+    "level": "hard"
+  }
+}

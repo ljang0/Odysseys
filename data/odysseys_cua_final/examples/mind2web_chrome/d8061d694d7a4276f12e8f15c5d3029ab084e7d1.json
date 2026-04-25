@@ -1,0 +1,51 @@
+{
+  "id": "d8061d694d7a4276f12e8f15c5d3029ab084e7d1",
+  "snapshot": "chrome",
+  "instruction": "I’m helping the same couple plan two separate weddings and I want something I can actually review in the browser afterward. First, use Google to find official venue pages for Napa Valley wedding venues that could realistically handle about 200 guests for a fall wedding, and please open each serious option in its own tab so I can compare them side by side later. I need about 10 Napa venues, and for each one please verify from the actual venue site the venue name, where it is in the Napa Valley area, the stated maximum wedding capacity or closest guest-count language you can find, plus a short description of what kind of place it is. Once you’ve verified those, go to CryptPad Sheets and create a spreadsheet called Napa Wedding Venues with columns for venue name, location, maximum guest capacity, venue description, and link to venue page, then fill it in with the Napa venues you confirmed, making sure the rows match the tabs you’ve kept open. After that, switch to Seoul and use Google to find wedding venues or wedding halls specifically in Gangnam-gu, opening each official site or the most authoritative live venue page you can find in its own tab so I can visually review the listings. I’d like around 10 Gangnam options too, and for each one please confirm the Gangnam location, the wedding capacity or at least an approximate size if that’s all the page gives, and what type of venue it is, like hotel, wedding hall, banquet hall, or something similar. Keep those Gangnam tabs open as well, and then give me a short comparison report that summarizes the 10 Seoul options by name, location, approximate size or capacity, and venue type, because I’m trying to see how the Napa and Gangnam venue pools compare before we narrow anything down.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 8,
+    "level": "hard"
+  }
+}

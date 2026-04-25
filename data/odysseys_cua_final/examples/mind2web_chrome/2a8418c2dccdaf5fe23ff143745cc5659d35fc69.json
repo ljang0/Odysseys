@@ -1,0 +1,51 @@
+{
+  "id": "2a8418c2dccdaf5fe23ff143745cc5659d35fc69",
+  "snapshot": "chrome",
+  "instruction": "I want to buy a pair of wired earbuds on Amazon, but I care much more about durability than hype, so please turn this into a real buying decision instead of just grabbing the first listing. Start by finding 10 to 12 plausible wired earbud or IEM models that are still easy to buy from major public pages, with Amazon included whenever possible, and keep the scope focused on everyday-use wired options rather than studio gear. For each candidate, compare the things that usually matter for longevity: cable thickness or strain relief, whether the cable is detachable, connector type, inline mic if shown, warranty length if publicly stated, price, and any obvious build-quality cues from the photos and product details. Then cross-check those candidates with at least one credible review or detailed discussion source per model so we are not relying on retailer marketing alone, and pay special attention to recurring failure complaints like one side dying, weak plugs, or bad strain relief. After that, narrow the list to exactly 4 finalists that look strongest on durability-for-price, and for each finalist keep open the Amazon listing plus one supporting non-Amazon evidence page. Among those 4, tell me which one is the best overall pick, which one is the best budget pick, which one is best if I want a detachable cable for easier long-term replacement, and which one should be avoided even if the sound looks attractive because the durability evidence is weak. Put the final comparison into one short decision memo organized by candidate, with prices marked as shown or not shown, and leave the most useful tabs open so I can review the finalists and buy from Amazon afterward. Use CryptoPad documents, and also store the different options in a separate CrpytoPad Spreadsheet.",
+  "source": "https://www.amazon.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.amazon.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.amazon.com",
+    "reference_length": 6,
+    "level": "hard"
+  }
+}

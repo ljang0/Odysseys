@@ -1,0 +1,51 @@
+{
+  "id": "4614aa083147e45cbc2977cc8634b9d9db25edfe",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to narrow down a few law schools in the Maryland/DC area and want a practical outreach plan before I start contacting anyone. On the University of Maryland Carey Law site, please find the actual way I can request admissions materials and also look for at least one upcoming online admissions event with its date and time, because I want to see how easy they make it to get information and whether there’s a virtual event I could realistically attend; open the event details page in its own tab and leave it there so I can look at it later. Then go to the University of Baltimore School of Law site and find the instructions for scheduling an admissions meeting by opening the relevant admissions event or meeting page and pulling the registration link or contact method from the actual details page, and keep that page open too so I can compare the two schools side by side. After that, on American University Washington College of Law’s site, find the PIPS Scholarship page and give me a short plain-English summary of what the scholarship is for, along with the application form link, because funding could change which school I prioritize; if there’s a dedicated scholarship page, leave that open in another tab as proof. Once you’ve gathered all of that, recommend which of these three schools I should contact first based on the best mix of easy admissions outreach and potential funding, and include the specific action or contact details you found for each school so I have a simple next move.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "medium"
+  }
+}

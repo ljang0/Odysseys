@@ -1,0 +1,51 @@
+{
+  "id": "440ed7f388a2a4528a8d9fb75f83e11f934b5b5d",
+  "snapshot": "chrome",
+  "instruction": "I’m putting together a small TV watchlist and want to anchor it around The Pitt first, so please go to Hulu and open the actual show page for The Pitt to confirm what service it’s on, then leave that tab open so I can see the listing myself. Once you’ve confirmed that, use Wikipedia to look up the TV series Ponies and pull the main cast names from the series page so I can compare who’s in a different show; if the cast is listed on the page, open the Ponies article itself and keep that tab available too just so I can glance at it. Then round out the watchlist with something older by going to Memory Alpha and finding the entry for Amok Time, and grab the key details from that page including which Star Trek series it belongs to, the season and episode number, and the original air date. Please give me everything back in one concise summary with the streaming service for The Pitt, the Ponies cast list, and the Amok Time details, and keep the Hulu and Memory Alpha pages open in separate tabs so I have visual proof.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "easy"
+  }
+}

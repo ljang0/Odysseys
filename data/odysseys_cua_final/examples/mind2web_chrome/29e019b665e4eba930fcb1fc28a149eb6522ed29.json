@@ -1,0 +1,51 @@
+{
+  "id": "29e019b665e4eba930fcb1fc28a149eb6522ed29",
+  "snapshot": "chrome",
+  "instruction": "I’m in NYC and trying to get my footing before I can seriously plan for law school, so I need help pulling together a realistic picture from a few specific sites. First, on Legal Aid NYC, please look for the most useful guidance for New York City rent disputes and pull out at least three concrete help options or contact paths I could actually use right now, plus two Legal Aid NYC articles that seem especially relevant to rent problems; open the actual article pages in separate tabs and leave the most useful one open so I can look at it myself. Then, because I may need to survive the gap before a first paycheck, use Google to find a practical personal-finance discussion about not making it until the first payday and summarize at least three actionable ideas that feel realistic for someone trying to bridge expenses temporarily. After that, go to Disney Careers and search specifically for at least three entry-level job openings in New York City that could plausibly fit a recent graduate, and for each one note the title, NYC-area location, application page, and any basic qualification cues; please open each job posting in its own tab so I can visually compare them. Finally, use AccessLex ARC to find one LSAC law school admissions cycle dataset and note the exact dataset title and what cycle or year it covers, then go to LawHub and pull the total annual cost of attendance for Case Western Reserve University School of Law so I have one concrete law-school cost benchmark. In the end, give me a concise summary that ties together the rent-help options, the short-term cash-flow ideas, the Disney job leads, the LSAC dataset reference, and the Case Western cost figure so I can judge whether this path feels workable.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 6,
+    "level": "medium"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "5aaab80dfeee2bad47c26c6a9b706f3dbaf76ab2",
+  "snapshot": "chrome",
+  "instruction": "I want to buy one compact electric cooker for a small kitchen, but I don’t want a generic pick—I want the best realistic option for making rice several times a week and steaming vegetables in the same appliance. Please do a serious browser-based comparison of exactly 8 compact electric multicookers in roughly the 2.5- to 4-quart range, starting with Amazon but expanding to manufacturer pages and other major public retailer pages when that helps verify specs, pricing, or bundle contents. For every model, capture the current product name, approximate price, stated capacity, overall dimensions or footprint, whether it has a dedicated rice program or rice guidance, whether it includes a steaming rack or basket, inner-pot material if shown, dishwasher-cleaning claims if shown, and any clearly stated safety features. Then go one layer deeper on the strongest candidates by opening the manual or official product page when available so you can verify how rice cooking and vegetable steaming are actually described, not just the retailer bullet points. I also want you to check at least 3 credible third-party review or comparison sources and use them only to help evaluate real-world usability issues like rice texture, steam performance, cleaning annoyance, nonstick concerns, slow preheat, or confusing controls. At the end, narrow the field to the best 3 options for my use case, explicitly naming the best overall pick, the best budget pick, and the best easiest-to-clean pick. Keep the final 3 product pages open, plus at least 2 supporting evidence tabs such as a manual, official spec page, or review page that helped drive the decision, and give me a concise final comparison that makes clear why the winner beats the others for rice-and-vegetable cooking in a small kitchen.",
+  "source": "https://www.amazon.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.amazon.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.amazon.com",
+    "reference_length": 9,
+    "level": "hard"
+  }
+}

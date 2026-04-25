@@ -1,0 +1,51 @@
+{
+  "id": "1f90184fb61690b3d2f0350196418d726a850a7d",
+  "snapshot": "chrome",
+  "instruction": "I’m seriously considering becoming a personal trainer, but I don’t want a shallow summary of one NASM page. Please build me a real browser-based decision guide for choosing the best certification path to start this career. Start with NASM, ACE, ISSA, ACSM, and NSCA, and use each organization’s public official pages to capture the core CPT option, minimum eligibility requirements, study format, exam or test details, whether CPR/AED is required, renewal cycle, continuing-education expectations, and the current public price or ‘not shown’ if it isn’t listed. For NASM specifically, go deeper and compare at least 3 distinct CPT package options side by side so I can tell what extra support or materials I’d actually be paying for. Then pressure-test the market by checking at least 24 current public personal-trainer job listings across 6 major U.S. metro areas, and record which certifications employers explicitly accept or prefer, plus whether they mention CPR/AED, experience, or specialties. Keep the key official certification pages open for all 5 organizations, and also keep open at least 6 representative job-listing tabs that show the employer demand evidence. Finally, put everything into one organized comparison sheet or document with one section for the 5 certification bodies, one section for the NASM package comparison, one section summarizing the 24 job listings, and a final recommendation for the best option in each of these 3 scenarios: cheapest credible path, best-supported beginner path, and strongest choice for broad employer recognition. Leave the finished comparison open at the end along with the most useful evidence tabs.",
+  "source": "https://pages-delivery.nasm.org",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://pages-delivery.nasm.org"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://pages-delivery.nasm.org",
+    "reference_length": 23,
+    "level": "hard"
+  }
+}

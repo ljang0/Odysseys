@@ -1,0 +1,51 @@
+{
+  "id": "2ab5a542b36b238ca0b84b812d7846e38e99aa13",
+  "snapshot": "chrome",
+  "instruction": "I’m getting a poetry packet ready and I don’t just want one isolated guideline check — I want a real submission plan built around Margie / The American Journal of Poetry as one of my targets. Please start by finding the official submission page for Margie / The American Journal of Poetry, confirm the submission method, any fee, and whether there’s an active reading period or any stated window, and keep that official page open. Then build me a serious shortlist of 10 poetry journals total, including Margie / The American Journal of Poetry plus 9 comparable U.S. literary journals that are publicly open enough to evaluate from their websites. For each of the 10 journals, use the official journal site or official submissions page to capture the submission method, fee or no-fee status, reading period or 'not shown', simultaneous-submission policy if stated, and any obvious packet limits like number of poems or page count if stated. After that, open publicly viewable recent-poem, archive, or current-issue pages for at least 6 of the 10 journals so you can compare aesthetic fit rather than just logistics, and keep the strongest evidence tabs open. I want you to synthesize all of this into one browser-based final recommendation that ranks the 10 journals into three buckets for this packet: top 4 best first-wave submissions, next 3 worth sending if the first wave doesn’t land, and bottom 3 lower-priority or situational targets. In the final synthesis, explain the ranking using both logistics and editorial fit, call out which journals seem best for a more literary/traditional voice versus a more experimental voice when that can be inferred from public samples, and clearly mark anything as 'not shown' when the site doesn’t say. Leave the key official guidelines pages and the most useful sample-poem pages open at the end so I can review the evidence myself.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

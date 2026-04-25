@@ -1,0 +1,51 @@
+{
+  "id": "08e2ad6afc624b6f759afa9950907f470b92f11b",
+  "snapshot": "chrome",
+  "instruction": "I’m seriously considering getting a pet bird, but I don’t want generic blog advice or a random species quiz — I want a credible owner-education packet I could actually read before deciding what kind of bird is realistic for me. Please start with the Association of Avian Veterinarians bird-owner materials, then expand to at least 3 other reputable public sources such as veterinary, university, or established exotic-animal education sites. Build me one organized decision memo that covers exactly 12 commonly kept pet-bird groups, using species groups like budgies, cockatiels, conures, lovebirds, African greys, Amazons, macaws, cockatoos, canaries, finches, pigeons/doves, and one poultry or waterfowl companion-bird category if credible owner handouts exist; if a good species-specific resource is missing, write 'not shown' instead of guessing. For each of the 12 groups, find the best available owner handout or client-education page and record the handout title, source organization, whether it is downloadable, and the main care topics it actually covers. Also collect at least 8 general bird-owner resources across cross-cutting topics like diet, housing, behavior, signs of illness, veterinary care, household dangers, zoonotic or public-health issues, and emergency or disaster planning. As you work, keep the main AAV bird-owner page open plus at least 6 of the strongest individual handout or PDF tabs from multiple organizations so I can inspect the evidence myself. Then finish the memo with a practical synthesis: identify the 3 bird groups that seem best supported by credible beginner-friendly owner education, the 3 that appear most complex or least well covered, and the biggest coverage gaps or red flags a first-time owner should know before choosing a species. Leave the finished memo and the most useful evidence tabs open at the end.",
+  "source": "https://www.aav.org",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.aav.org"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.aav.org",
+    "reference_length": 4,
+    "level": "hard"
+  }
+}

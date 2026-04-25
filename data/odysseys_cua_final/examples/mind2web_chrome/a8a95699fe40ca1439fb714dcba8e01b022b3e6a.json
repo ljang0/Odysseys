@@ -1,0 +1,51 @@
+{
+  "id": "a8a95699fe40ca1439fb714dcba8e01b022b3e6a",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to decide whether Silver Cross is actually a strong baby brand to buy from for a future first-child stroller setup, not just whether the marketing sounds nice, so please do a serious browser-based comparison that would help me make the call. Start by identifying one current full-size stroller or travel-system option from Silver Cross that seems representative of the brand, then compare it against at least 5 competing premium or upper-midrange brands that people realistically cross-shop, using public product pages plus independent reviews and owner feedback. For Silver Cross specifically, I want you to gather at least 6 concrete reputation or quality claims from independent sources, with at least 3 positives and at least 2 meaningful drawbacks, and make sure they are specific things like build quality, ride quality, fold, weight, fabric quality, durability, customer service, or long-term value rather than vague praise. Then build a side-by-side comparison across the 6 total brands for the factors a real buyer would care about: approximate price, stroller weight, fold or portability, newborn compatibility, car-seat or travel-system ecosystem, warranty or after-sales support, and any clearly stated safety or recall context from public pages; if a field is not shown, record it as not shown. As you work, keep the most useful evidence tabs open, including the Silver Cross product page, at least 3 independent review pages discussing Silver Cross, at least 2 competitor product pages, and at least 1 public safety or recall-check page so I can verify the reasoning afterward. After that, synthesize everything into one clear recommendation that answers three questions: whether Silver Cross seems like a genuinely good brand overall, what kind of buyer it fits best versus who should skip it, and whether I’d be better off buying Silver Cross or one of the compared alternatives for a practical everyday stroller setup.",
+  "source": "https://www.silvercrossbaby.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.silvercrossbaby.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.silvercrossbaby.com",
+    "reference_length": 6,
+    "level": "hard"
+  }
+}

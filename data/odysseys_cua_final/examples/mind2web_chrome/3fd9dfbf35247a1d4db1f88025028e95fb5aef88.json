@@ -1,0 +1,51 @@
+{
+  "id": "3fd9dfbf35247a1d4db1f88025028e95fb5aef88",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to choose a genuinely healthy meal delivery service for a future routine, and I don’t want a one-brand summary that leaves me guessing about the alternatives. Start with Hungryroot as one contender, but compare it against 7 other nationally available services that belong in the same decision set, for 8 total services. Use each service’s official public plan or pricing pages to capture what it actually offers: whether it’s meal kits, prepared meals, groceries, or a hybrid; the main dietary styles or nutrition angle; the starting price or visible price range; any shipping, membership, or delivery fees if shown; the minimum order structure if shown; and how ordering, skipping, or canceling appears to work. If a public page does not show one of those fields, record it as “not shown” instead of guessing. Then, for each of the 8 services, use at least one reputable public review source to sanity-check customer sentiment, but keep the official pages as the main evidence. I want a side-by-side comparison and a final recommendation for exactly 3 cases: best overall healthy option, best budget-conscious option, and best option for maximum flexibility/customization. Keep the official pricing or plan tabs open for Hungryroot plus the 3 finalists, and also leave open the review pages you relied on most so I can verify the reasoning myself.",
+  "source": "https://www.hungryroot.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.hungryroot.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.hungryroot.com",
+    "reference_length": 5,
+    "level": "hard"
+  }
+}

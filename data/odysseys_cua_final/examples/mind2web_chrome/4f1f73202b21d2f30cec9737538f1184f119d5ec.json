@@ -1,0 +1,51 @@
+{
+  "id": "4f1f73202b21d2f30cec9737538f1184f119d5ec",
+  "snapshot": "chrome",
+  "instruction": "I already have a show on YouTube and want to turn it into a real podcast setup, with Spotify as a priority but not necessarily by blindly using Spotify’s own hosting if another path is better. Please use public pages only to compare exactly 8 realistic podcast hosting or distribution options for a YouTube-first creator, including Spotify for Creators and 7 other major platforms you judge to be good fits. For each option, check the official site and record whether I can create a new show or import an existing one, whether distribution to Spotify and other podcast apps is supported, whether video podcasts are supported, the publicly shown free tier or lowest paid price, what public analytics or monetization features are advertised, and any obvious limitation for repurposing an existing YouTube show into podcast episodes; if a field is not shown, say 'not shown.' While doing this, keep the official pricing or features pages open for the 4 strongest options so I can compare them later. Then go through Spotify for Creators on its public pages far enough to confirm the current onboarding path for adding a podcast, including the live entry point that corresponds to 'Add your podcast' or its current equivalent, and also find Spotify’s public guidance about creating a new show versus importing one by RSS. Finally, give me a clear recommendation for the best low-cost path if my goal is to repurpose an existing YouTube show into audio now without boxing myself in later, explain why the top 2 options beat the rest, and leave the key Spotify and top-alternative tabs open.",
+  "source": "https://creators.spotify.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://creators.spotify.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://creators.spotify.com",
+    "reference_length": 18,
+    "level": "hard"
+  }
+}

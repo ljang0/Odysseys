@@ -1,0 +1,51 @@
+{
+  "id": "7f9a7d1771191e31cdb77715a4207fcd469346ca",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to plan a future trip from Kuala Lumpur to airport code LBJ, and I don’t just want one snapshot fare search — I want a real browser-based comparison that helps me decide when and how to book. First, confirm which airport LBJ refers to on public flight sites, then search for this route across at least 12 plausible future departure date combinations spread over multiple weeks or months so we can see whether true direct service actually exists and when it tends to be cheapest. Prioritize nonstop options whenever they are real, but if nonstop service is missing or clearly poor value on some dates, include the strongest one-stop fallback options for those same windows so I can compare the tradeoff. For each of the 12 date checks, capture the cheapest viable option, total travel time, airline, and whether it is nonstop or one-stop, and cross-check the most promising results on at least two public flight-search or airline pages rather than trusting a single source. Then narrow that down to the 6 strongest overall options and compare the important booking details on public pages: baggage allowance, refund or change flexibility if shown, and the booking source or airline page that appears most trustworthy. Keep the most useful search tabs open, including at least 3 tabs showing the best nonstop candidates and at least 2 tabs showing the best one-stop backups, so I can inspect them later. Finish with a concise recommendation that names the best overall option, the best cheapest nonstop option if different, and the best value fallback if I need to compromise on stops or travel time, with all prices, durations, and any missing details marked as not shown.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "hard"
+  }
+}

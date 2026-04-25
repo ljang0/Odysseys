@@ -1,0 +1,51 @@
+{
+  "id": "ec290c1a334e976ffa3ba68b71ac6c09c2eb82ba",
+  "snapshot": "chrome",
+  "instruction": "I’m in the UK and I’m worried my tenancy deposit may not have been handled properly when I took over an existing tenancy, so could you start on Citizens Advice and find the guidance that explains whether the landlord or agent still had to protect the deposit in that kind of handover situation, and also how I’m supposed to check whether it’s protected and what I can do if it wasn’t done correctly. Please open the actual Citizens Advice page and leave it open so I can look at the wording myself. Once you’ve got that, use Google to find a solid explanation of what a rent ledger is and how to make one, because I want to document every rent payment and deposit-related amount clearly if I end up disputing this; tailor that summary to my situation by spelling out exactly which columns or entries I should include for a UK tenancy deposit issue, and open the most useful source in its own tab so I can compare it with the Citizens Advice guidance. After that, still using Google, find a practical personal-finance discussion about getting through to the next paycheck and pull out at least three realistic short-term ways to cover expenses while I sort this out, since I may need a bit of breathing room without making things worse. Then go to MoneySavingExpert’s Cheap Mobile Finder and filter for SIM-only deals with unlimited minutes, unlimited texts, and at least 10GB of data, and list the three cheapest options in ascending price order so I can see whether switching my phone plan would help. Please keep the filtered results page open too, and give me one combined summary that brings together the deposit guidance, the rent-ledger setup advice, the short-term cash-flow ideas, and the mobile deal recommendations.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "medium"
+  }
+}

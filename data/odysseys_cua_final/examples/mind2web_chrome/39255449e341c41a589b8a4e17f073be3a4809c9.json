@@ -1,0 +1,51 @@
+{
+  "id": "39255449e341c41a589b8a4e17f073be3a4809c9",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to buy a pair of Kobe Bryant sneakers for my son’s birthday, so I want a quick but trustworthy read on what’s coming out soon and what I could actually buy right now. Please start on Sole Collector and look for upcoming Kobe Bryant signature-line releases, pulling the shoe names and release dates from the actual release coverage pages if they’re listed, and leave the most relevant Sole Collector page open so I can glance at it myself. Then check Sneaker News for upcoming Kobe release dates and any useful details like colorways or launch context, and open the main article you used in its own tab so I can compare it side by side with Sole Collector. After that, go to Foot Locker and see whether they have any Kobe entries on their release calendar or product pages, and note whether anything looks upcoming versus currently available; if you find a relevant release or product page, keep that open too so I can visually verify it. Finally, go to Nike and search for Kobe shoes that are actually in stock right now, open any live purchasable product pages you find in separate tabs, and if there’s an available pair, select a common men’s size like 10 if the page allows it just so I can see that it’s really buyable. At the end, give me a concise summary that combines the upcoming release names and dates from Sole Collector, Sneaker News, and Foot Locker with source attribution, plus a note on any in-stock Kobe pairs you found on Nike and which product tabs you left open for me.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "easy"
+  }
+}

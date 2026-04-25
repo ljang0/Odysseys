@@ -1,0 +1,51 @@
+{
+  "id": "fc98d55986ef93480fb659db44e070c04f93301a",
+  "snapshot": "chrome",
+  "instruction": "I’m daydreaming about doing a big summer baseball trip through Japan where I see exactly one game at every single NPB stadium, and I want it planned like something I could actually book, not just a rough idea. Please start on npb.jp and pull the full summer schedule, then identify all 12 NPB stadiums and pick one realistic summer game at each stadium so the dates can fit into one chronological trip. Once you’ve got those game dates, use Google Flights and Google Travel to figure out the cheapest practical route between the cities, mixing flights and trains or other ground transport when that saves money, because I want to keep the total cost under control without making the trip impossible. After that, go to Booking.com and find a place to stay for each game night that’s reasonably close to the stadium, ideally something like a well-rated hotel or business hotel that would be easy after a night game, and open the actual hotel listing so I can see the photos and map. Then use Google Search and Yelp to figure out the best Japanese food plan in each stadium city — I’m hoping for a real food tour feel, so look for standout ramen shops, izakayas, sushi spots, local specialties, and markets where that makes sense. Please open a couple of the most promising food spots in separate tabs for at least a few cities so I can visually compare whether they look worth it. Finally, put everything together in a CryptPad Document as one clean chronological itinerary with the stadium, matchup, date, city, travel leg, transport mode, hotel, food plan, and estimated costs for each stop, and leave the doc open at the end so I can review it.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 6,
+    "level": "hard"
+  }
+}

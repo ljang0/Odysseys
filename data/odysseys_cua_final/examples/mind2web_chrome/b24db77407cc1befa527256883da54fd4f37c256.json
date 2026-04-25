@@ -1,0 +1,51 @@
+{
+  "id": "b24db77407cc1befa527256883da54fd4f37c256",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to figure out which quick-dry camping towel I should actually buy for future trips, and I don’t want a one-listing answer. Start by using Temu as the low-cost baseline, then compare it against mainstream public retail options like Amazon, Walmart, REI, Target, or other public store pages you can access without signing in. I want a real browser-based market scan of 12 total quick-dry camping or travel towels, with at least 3 from Temu and at least 3 from non-discount outdoor or big-box retailers, and the rest from any credible public listings that fit. For each product, record the product name, current listed price, stated size, material if shown, packed or product weight if shown, whether it comes with a pouch or loop if shown, color/options note if relevant, and anything the page says about drying speed or absorbency; if a field is missing, write 'not shown.' As you compare them, open the actual product pages plus enough review/photo sections to sanity-check whether the towels look genuinely compact and camping-usable rather than just cheap gym towels. Then narrow the 12 down into 3 finalists: the best budget pick, the best overall value pick, and the best premium or most durable-looking pick. For those 3 finalists, also compare shipping or delivery info if publicly shown, return policy basics if publicly shown, and at least one review-based concern or tradeoff. Finish with a concise recommendation that tells me which one you would buy for a typical car-camping or weekend hiking user and why, and leave the 3 finalist product tabs plus 2 comparison tabs open so I can review the evidence myself.",
+  "source": "https://www.temu.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.temu.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.temu.com",
+    "reference_length": 4,
+    "level": "hard"
+  }
+}

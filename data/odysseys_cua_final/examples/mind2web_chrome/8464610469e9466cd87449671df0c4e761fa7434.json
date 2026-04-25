@@ -1,0 +1,51 @@
+{
+  "id": "8464610469e9466cd87449671df0c4e761fa7434",
+  "snapshot": "chrome",
+  "instruction": "I’m daydreaming about doing a full summer KBO baseball trip through South Korea and I want to make it feel like a real, bookable plan instead of just a rough idea. Please start on koreabaseball.com and pull the current KBO schedule, then identify all 10 active KBO stadiums and choose one actual summer game at each stadium, ideally in a route that won’t make me zigzag all over the country. Once you have those 10 game dates and matchups, use Google Flights and Google Maps or Google Travel to figure out the cheapest practical way to move between each stop, whether that means flights, trains, buses, or driving, because I want the route to be efficient and budget-conscious. After that, go to Booking.com and find one solid place to stay near each stadium for the corresponding game night, aiming for convenient locations and reasonable prices rather than luxury. Then use Google Search to research what each city is especially known for eating, and use Yelp to turn that into a real food plan for every stop with specific restaurants, markets, or street-food areas I could actually visit around the game. As you do this, please open the actual hotel listings in their own tabs so I can compare photos and map locations, and for at least a couple of the food stops, open the real listing pages so I can visually verify they look active and worth visiting. When it all comes together, put everything into a CryptPad Document with the stadium, city, game date and matchup, travel leg, lodging, food plan, and estimated costs for each stop, and leave the finished doc open so I can review it.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 6,
+    "level": "hard"
+  }
+}

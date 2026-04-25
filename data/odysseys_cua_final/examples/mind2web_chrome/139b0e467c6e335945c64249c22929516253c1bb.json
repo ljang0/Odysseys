@@ -1,0 +1,51 @@
+{
+  "id": "139b0e467c6e335945c64249c22929516253c1bb",
+  "snapshot": "chrome",
+  "instruction": "I’m thinking about signing up for UserTesting for a little side income, but I don’t want to waste time on something sketchy or low-paying, so can you sanity-check it for me in the browser? First, use Google to find at least one independent article or ranking that treats Userlytics as one of the better user-testing platforms, because I want a real comparison point that isn’t coming from Userlytics itself; open the actual ranking page and leave it open in a tab so I can look at the source. Then go to UserTesting’s own site and find what they say contributors can earn for tests, including any rates, ranges, or conditions that affect payment, and keep that page open too. After that, go through UserTesting’s contributor help or support pages and pull out at least five specific things a contributor should avoid doing during tests so I can tell how easy it would be to get rejected or rated badly; if the guidance is spread across multiple help pages, open the most relevant ones in separate tabs so I can compare them. Finally, use Google to get to Irreality Labs Inc’s official website, look through what the company says it does, and then use visible public details from the site or linked company profiles to judge whether it looks like a legitimate business and the kind of company that might realistically use UX research or testing platforms like these. Please give me a concise wrap-up with the independent Userlytics source and standing, UserTesting pay details, at least five contributor mistakes to avoid, and your judgment on Irreality Labs Inc, and leave the key pages open so I can verify them myself.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 6,
+    "level": "medium"
+  }
+}

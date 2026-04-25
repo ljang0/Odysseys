@@ -1,0 +1,51 @@
+{
+  "id": "890a6880049a42684ac91a2e1809442846f9394c",
+  "snapshot": "chrome",
+  "instruction": "I’m thinking about doing a simple public-transit outing from downtown Chicago to Aurora, Illinois soon, and I want a practical snapshot I can actually look at in the browser. On Google, please search for the recommended public-transit route from Chicago to Aurora, Illinois and open the actual transit directions so you can tell me the main mode I’d be taking and the estimated total travel time; leave that directions page open so I can review the route myself. Since I may need a little context for rail connections and fare structure, then go to Metra’s BNSF line page and summarize what the BNSF line is, where it runs, and where on that page or site fare information is listed; if there’s a separate fares link, open that in another tab so I have a visual reference. After that, head to Weather.com and pull up the local 10-day forecast for Aurora, Illinois, then give me the high and low temperatures for the next 3 days so I can judge whether the trip will feel comfortable. Please send everything back as one concise trip-planning summary, and keep the Google transit directions tab and the relevant Metra page open for comparison.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "easy"
+  }
+}

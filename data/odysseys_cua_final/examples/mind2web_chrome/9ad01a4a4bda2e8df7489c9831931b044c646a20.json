@@ -1,0 +1,51 @@
+{
+  "id": "9ad01a4a4bda2e8df7489c9831931b044c646a20",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to get a realistic shortlist of shoulder surgeons in Chicago because I may need surgery for a rotator cuff or labrum issue, and I want something more trustworthy than random review sites. Please start on Google and search for Chicago orthopedic surgeons who clearly specialize in shoulder surgery, especially rotator cuff repair or labrum repair, and use official hospital or orthopedic practice profile pages as the main sources. As you find strong candidates, open each surgeon’s official profile in its own tab so I can visually compare them later, and only keep people whose actual profile page clearly mentions shoulder surgery, shoulder conditions, rotator cuff repair, labrum repair, sports medicine with shoulder focus, or similar shoulder-specific procedures. While you work, create a CryptPad Sheets spreadsheet called Top Shoulder Surgeons Chicago and track the finalists there with columns for surgeon name, hospital or medical center affiliation, specialty focus, the exact confirmation that shoulder surgery is listed, and the link to the profile page. From the verified candidates, narrow it to the top 10 Chicago surgeons who seem especially strong for shoulder surgery based on what you can see on their official profiles, like shoulder specialization, fellowship training, leadership roles, sports medicine focus, or detailed shoulder procedure listings. Please leave all 10 profile tabs open so I can inspect the pages myself, then finish the sheet with a short summary of which hospitals or orthopedic centers show up most often among the 10 specialists.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 6,
+    "level": "hard"
+  }
+}

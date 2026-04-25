@@ -1,0 +1,51 @@
+{
+  "id": "b4d11b2d7069bf45410b6784544504b23360b34a",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to put together a really cheap late-November city-break from London and want a realistic shortlist I can actually look at in the browser. Please start on Skyscanner and search round-trip flights leaving from London for November 18 and coming back November 28 then pull out four destination options that look viable and note the destination city or airport and the lowest price shown for each so I can see which places are even in budget. Open the most promising flight results in their own tabs and leave the cheapest-looking Skyscanner option visible so I have a reference point. Once you’ve got that shortlist, use it to decide which destination appears cheapest overall. After that, go to Ryanair and check London to Budapest for the week starting November 18 because Budapest is usually a low-cost fallback for me and I want to know whether it still deserves a spot on the list; list the cheapest available options you can find in ascending price order and keep the Budapest results page open so I can compare it visually with Skyscanner. Since I may need to stay in London the night before flying, switch to Booking.com and look up 22 Suites in London, report its guest review score, and summarize at least three recent guest reviews so I can tell whether the nice rating actually matches what people are saying. Then do the same quality check for The Chapter Hotels – Finsbury Park by reporting its overall review score and review descriptor and reading into the recent reviews enough to judge whether it really seems dependable for a one-night pre-flight stay. If possible, open both hotel pages in separate tabs and leave the review sections visible so I can compare them side by side. In the end, give me a short recommendation on which flight option you’d prioritize, whether Budapest should stay on the shortlist as a backup, and which of those two London hotels seems more reliable for the night before an early flight.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 7,
+    "level": "medium"
+  }
+}

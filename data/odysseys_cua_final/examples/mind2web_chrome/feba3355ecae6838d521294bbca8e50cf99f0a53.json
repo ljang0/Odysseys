@@ -1,0 +1,51 @@
+{
+  "id": "feba3355ecae6838d521294bbca8e50cf99f0a53",
+  "snapshot": "chrome",
+  "instruction": "I'm getting serious about applying to computer science PhD programs in machine learning and AI, and I want a realistic shortlist of schools plus specific professors who might actually be good advisor matches. Please start on CSRankings and use it to pull together the top 25 U.S. computer science PhD programs as the base list, because I want something credible and standardized rather than a random blog ranking. Then open CryptPad Sheets and create a spreadsheet called \"ML PhD Programs and Advisors\" with columns for university, professor name, research area, whether they appear to be accepting students, the exact evidence or wording you found, professor page link, and lab or research group link if there is one. After that, go school by school through the CS department faculty directories for those top programs and look specifically for faculty working in machine learning, artificial intelligence, data science, NLP, robotics, or computer vision, since those are the areas I'm most likely to apply in. For each promising professor, open the actual faculty profile or personal website in a new tab, and if they have a lab page open that too in another tab so I can visually inspect the pages later; I especially want you to look for signs like \"accepting PhD students,\" \"recruiting,\" application guidance for prospective students, active lab rosters, recent projects, or anything else that suggests they are actively supervising graduate students right now. Please record at least 20 professors across the top schools, but try to spread them across the list instead of clustering everything at just MIT, Stanford, Berkeley, and CMU, because I want a broad application strategy. As you go, keep the relevant professor and lab tabs open so I can review the evidence on screen, and if a professor does not explicitly say they are accepting students, note that clearly rather than guessing. Once the sheet looks complete, do a consistency pass to make sure the links work, the research areas match what is actually on the pages, and the accepting-students status is backed by visible evidence. Then add a short summary section in the sheet or a companion doc explaining which universities seem to have the biggest clusters of ML/AI faculty who appear open to advising new PhD students, so I can see where my odds and fit might be strongest.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 8,
+    "level": "hard"
+  }
+}

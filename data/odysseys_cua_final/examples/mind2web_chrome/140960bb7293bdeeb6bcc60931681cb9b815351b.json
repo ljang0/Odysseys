@@ -1,0 +1,51 @@
+{
+  "id": "140960bb7293bdeeb6bcc60931681cb9b815351b",
+  "snapshot": "chrome",
+  "instruction": "I'm trying to plan a really simple errand loop around Chapel Hill and Carrboro, so could you start on Google and find at least three public little free pantries or community food boxes in or very close to Chapel Hill/Carrboro, then open the actual map or listing pages for each one in separate tabs so I can visually confirm they're real places and still look active. Once you have those, go to Publix and check the current weekly BOGO deals, and from that ad pick the deals that would work for a carnivore-style dinner, meaning meat, seafood, cheese, eggs, or other animal-based items only, because I want to turn the pantry run into a quick grocery stop too. From those BOGO items, choose one specific dinner pairing made only from the qualifying deals and leave the weekly ad or product pages open so I can look at the prices and packaging myself. After that, go to Bisou Bisou's site and find one cocktail on the menu that is actually green, then open the menu page and tell me the drink name and ingredients so I have an optional treat stop after the errands. Please give me the pantry locations with addresses or clear location descriptions, the exact Publix BOGO items you used and the dinner pairing, plus the green cocktail name and ingredients.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "easy"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "c6b29e8564a7ae86dc50a1f074bdc2b5abb3754a",
+  "snapshot": "chrome",
+  "instruction": "I want to grab some Pokémon trading cards pretty quickly, but only if they’re actually available to buy right now, so could you check a few retailers for me and keep the product pages open in separate tabs so I can visually compare them afterward? Start on BestBuy.com and search for Pokémon trading card products, then find at least two items that show they’re in stock right now and note each product’s full name, current price, and exactly what the availability message says on the page. After that, go to BarnesandNoble.com and find one Pokémon card item that’s clearly in stock, open the actual product page so I can see the listing itself, and grab the title and listed price. Then head to Walmart.com, search for a Pokémon card product, and make sure the one you pick is sold and shipped by Walmart rather than a marketplace seller, then record the product name and price and leave that product page open too. Once you’ve got those pages, compare the in-stock options across all three stores and tell me which available item is the cheapest overall and where I should buy it. Then, make the tab for this option active.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "easy"
+  }
+}

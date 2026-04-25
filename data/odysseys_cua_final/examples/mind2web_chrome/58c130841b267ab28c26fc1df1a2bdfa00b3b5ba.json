@@ -1,0 +1,51 @@
+{
+  "id": "58c130841b267ab28c26fc1df1a2bdfa00b3b5ba",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to make a serious Apple-only buying decision for a small three-role setup in the UK, and I want you to do the whole comparison in the browser instead of just glancing at one MacBook Pro page. Please start from Apple UK’s Mac pages and compare at least 8 real configurations drawn across the current MacBook Air, MacBook Pro, iMac, Mac mini, and Mac Studio families, using only public Apple pages. I need this organized around exactly three roles: a travel-heavy general user, a software developer, and a photo/video creator. For each role, figure out which Mac is the best fit and which lower-cost fallback is still reasonable, and note the key reasons from the official specs pages such as chip tier, memory, storage, display, ports, battery, and external-display support whenever Apple shows it. As you work, keep the most useful product pages open for the finalist options, including at least one MacBook Pro page and the main Mac lineup page, so I can review the evidence. After the comparison, build one draft Apple UK shopping bag with exactly 3 chosen Macs total, one for each role, and add AppleCare+ for each if publicly available on the path you use. Also check whether each chosen Mac plausibly needs any first-party accessory from Apple, like an adapter, mouse, keyboard, or external display, and add only the accessories that are clearly justified by the role; if something is not shown publicly, say not shown rather than guessing. In the end, give me a concise final buying recommendation that includes the 8 compared configurations, the 3 selected Macs, any added AppleCare+ or accessories, the estimated subtotal from the bag if visible, and the main tradeoffs you used to decide. Leave the final bag open along with the key comparison tabs. Give me the different options and viable options you drew up in a CryptoPad spreadsheet.",
+  "source": "https://www.apple.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.apple.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.apple.com",
+    "reference_length": 10,
+    "level": "hard"
+  }
+}

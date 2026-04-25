@@ -1,0 +1,51 @@
+{
+  "id": "7c0efe6388e3b7745a4db7e755b4e9b0a7b23508",
+  "snapshot": "chrome",
+  "instruction": "I want help making a real purchase decision on a warm, military-style winter jacket, not just grabbing the first tactical-looking one I see. Start with Viktos, but widen out to other credible brands that sell the same general kind of jacket on public product pages. Compare exactly 12 jackets total from at least 6 brands, with Viktos definitely included, and focus on options that visibly read as military or tactical rather than fashion-only parkas. For each jacket, capture the product name, listed price, insulation or warmth information if shown, shell or weather-protection details, available colors, whether common tactical colors like black, ranger green, coyote, olive, or gray are offered, and whether size Large is shown or not shown. Also check the sizing chart or fit notes where available, plus the return policy or warranty page for each brand, because I do not want to get stuck with an expensive bad fit. Keep the browsing practical and visual: open the strongest product pages in separate tabs, compare photos closely so the styling stays in the para-military lane, and leave the best 4 jacket pages open at the end along with 2 useful sizing or return-policy pages. Then give me a final ranked shortlist of 5 jackets with a clear winner, a best value pick, and a best severe-cold pick, explaining the tradeoffs in warmth, style, price, and purchase risk. Create a tracker of all the options and their prices, along with their links in CryptoPad Spreadsheets.",
+  "source": "https://viktos.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://viktos.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://viktos.com",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "1fd26abb3743ca1dfdc648af0fcab2c3a2def6e9",
+  "snapshot": "chrome",
+  "instruction": "I’m moving from Pittsburgh to San Francisco and want to get a realistic side-by-side view of my options before I decide whether to hire movers, use a container, or just drive a truck myself. Please start on MovingAPT.com and get me a long-distance estimate for a 1-bedroom apartment move from Pittsburgh, PA to San Francisco, CA, and keep the quote page or results open so I can look at what assumptions they used. Then do the same on International Van Lines for the same 1-bedroom move, because I want at least two full-service mover quotes to compare. After that, check PODS for a container option that would make sense for a 1-bedroom apartment on that same route, and then check U-Pack for the equivalent portable moving setup, making note of whether they’re pricing by container count, trailer space, delivery, or monthly rental. Once those are open, go to U-Haul and price out a one-way 15-foot truck from Pittsburgh to San Francisco, then on U-Haul’s site find the MPG or fuel economy info for that truck so we can estimate the real driving cost. Use Google Maps to pull up the driving route from Pittsburgh, PA to San Francisco, CA and record the mileage, and leave the map visible so I can sanity-check the route distance on screen. I also have State Farm renters insurance, so please look on State Farm’s site to see whether my belongings are covered while they’re in transit during a move or whether I’d probably need separate moving coverage or valuation. After that, check Trustpilot for MovingAPT, International Van Lines, PODS, U-Pack, and U-Haul, and open each company’s Trustpilot page in its own tab so I can visually compare the ratings and review counts. In the end, pull everything together into one comparison with the estimated total cost for each option, and for U-Haul please calculate the truck rental plus estimated fuel cost using the route mileage and the truck MPG, so I can see which option is cheapest and which seems safest.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 10,
+    "level": "hard"
+  }
+}

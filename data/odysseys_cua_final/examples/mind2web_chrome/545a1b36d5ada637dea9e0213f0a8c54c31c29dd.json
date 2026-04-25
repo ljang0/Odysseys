@@ -1,0 +1,51 @@
+{
+  "id": "545a1b36d5ada637dea9e0213f0a8c54c31c29dd",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to buy a pair of black calf-high dress boots that actually look sleek on the leg instead of loose or slouchy, and I wear women’s size 5.5, so I want a real browser-based shopping sweep rather than one lucky guess. Please start with DSW since that’s where I began looking, but expand across other major public retail sites if needed and build me a shortlist of exactly 12 viable options. Every candidate should be black, calf-high or very close to calf-high, have a thick or block-style heel, and show women’s size 5.5 or a clear equivalent; if shaft height, calf circumference, or width details are missing, just write “not shown” instead of guessing. As you review each product page, use the photos, description, measurements, and customer-review evidence to judge whether the boot looks form-fitting through the calf rather than wide, slouchy, or obviously gappy. For all 12 options, capture the product name, retailer, current price, heel type and height if shown, shaft height if shown, calf circumference if shown, material, size-5.5 availability status, and a short fit-confidence note. Then compare the retailer’s return-policy basics and any obvious shipping constraints because fit is the biggest risk here. After that, narrow the 12 down to the best 4 finalists: one best overall, one best value, one most form-fitting-looking, and one safest-to-try because of returns. Keep the product tabs open for those final 4, and also keep open the most relevant return-policy pages for the retailers behind them so I can sanity-check the fit risk later. Finish with a concise decision memo in the chat that lists all 12 candidates and clearly tells me which of the 4 I should try first and why.",
+  "source": "https://www.dsw.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.dsw.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.dsw.com",
+    "reference_length": 4,
+    "level": "hard"
+  }
+}

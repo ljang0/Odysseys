@@ -1,0 +1,51 @@
+{
+  "id": "4d13c31d463a1277ca8b7ef95947ee4117b0f922",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to figure out the smartest way for 3 adults to fly from the Washington, DC area to Orlando for a future trip built around the original Jan 30 travel window, and I don’t want just one American Airlines screenshot-price. Please start by checking American’s public booking flow for the original one-way search from DCA to MCO for 3 adults around that date so we have the baseline, then broaden into a real comparison that I could actually use: compare flights from all 3 Washington-area airports (DCA, IAD, and BWI) to Orlando-area options if publicly shown, using a tight date window centered on that trip timing and keeping the search bounded to 3 outbound dates total. For each airport/date combination, compare American with at least 2 other major airline options visible on public booking or metasearch pages, and focus on the cheapest practical itinerary for 3 adults rather than just the lowest teaser fare. As you compare, note whether each best option is nonstop or connecting, the departure and arrival times, the fare type, and any obvious restrictions that would materially affect the real price for normal travelers, especially carry-on limits, checked-bag assumptions if clearly shown, and seat-selection limitations if clearly shown; if something is not shown, record it as not shown. I want a final side-by-side comparison covering exactly 9 search combinations total (3 origin airports x 3 outbound dates), with one best option per combination and a clear overall recommendation for the best value, the best convenience, and the best American-only choice. Keep the most useful evidence tabs open at the end: the original American baseline search, the two strongest non-American comparison pages, and the final winner page so I can review them.",
+  "source": "https://www.aa.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.aa.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.aa.com",
+    "reference_length": 11,
+    "level": "hard"
+  }
+}

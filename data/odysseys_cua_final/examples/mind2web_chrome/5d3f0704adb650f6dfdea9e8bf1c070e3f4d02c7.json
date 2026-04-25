@@ -1,0 +1,51 @@
+{
+  "id": "5d3f0704adb650f6dfdea9e8bf1c070e3f4d02c7",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to decide whether I should keep using a browser-based password saver like Google Password Manager or switch to a dedicated password manager, and I want you to do a serious browser-based comparison that ends with exactly 3 apps I could realistically adopt. Start by identifying 8 to 10 credible password managers that have public pricing and security/privacy information, including Google Password Manager as a baseline if it qualifies. For each one, open and compare the official pricing page, the main security or architecture page, the privacy policy or privacy summary page, and a public help or feature page that confirms practical things like cross-device sync, passkey support, import/export options, and whether it works on the platforms I’m likely to care about. As you compare them, rule out anything that is obviously too expensive, weak on privacy, missing from major platforms, or unclear about how user data is protected. Then narrow the list to the best 5 finalists and do a deeper trust check for those 5 using public evidence such as independent security audits, bug bounty programs, encryption design explanations, breach or incident disclosures if any are relevant, and company transparency pages. After that, recommend exactly 3 applications that best balance affordability, privacy, and trustworthiness for a normal individual user, and for each of the 3 explain why it made the cut, what the likely monthly or annual cost is, what privacy or trust tradeoffs I’d be accepting, and whether migration from a browser-based password saver seems straightforward based on public import/export help pages. Keep the most useful comparison tabs open for the final 3, including at least one pricing tab and one security/privacy evidence tab for each finalist, plus one tab that shows Google Password Manager as the baseline I’m comparing against.",
+  "source": "https://passwords.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://passwords.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://passwords.google.com",
+    "reference_length": 4,
+    "level": "hard"
+  }
+}

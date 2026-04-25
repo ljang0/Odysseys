@@ -1,0 +1,51 @@
+{
+  "id": "e7ae8abcf742d5ba2ef4eef88d16bbe26df978e2",
+  "snapshot": "chrome",
+  "instruction": "I'm trying to get a realistic picture of the top U.S. medical schools before I go too far down the application rabbit hole, and I want this organized in a way I can actually review later. Please start by using U.S. News to pull together a top-20 list of U.S. medical schools, then cross-check that list on Times Higher Education so the schools we keep are broadly supported by major rankings rather than coming from just one source. Once that shortlist looks solid, go to each school's official MD admissions site and open the actual admissions page in its own tab so I can see the real pages later, and from those official pages verify the application deadline, whether the MCAT is required, and a brief program overview with the school name, university, and location. After that, stay on the official university or medical school sites and look for at least one funding opportunity, fellowship, scholarship, or special training program tied to medical students for each school where possible — things like merit scholarships, leadership fellowships, research fellowships, or service and specialized pathway programs. When you find a relevant program, open the actual program page in a new tab and verify the eligibility details and any funding amount if it's listed, because I want browser-proof tabs open to the official sources rather than just a summary. Then create a CryptPad document titled Top Medical Schools and Fellowships and fill it in with one structured entry for each of the 20 schools, including the admissions link and the associated program links, and make sure there are at least 20 total funding or special-program entries across the whole document. At the end, leave the document open and also keep a representative set of the admissions and program tabs open so I can visually spot-check them, then add a short summary explaining which schools seem to offer the strongest funding support and whether the programs you found lean more toward research, leadership, or service, along with your top recommendations for where I should focus first.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 9,
+    "level": "hard"
+  }
+}

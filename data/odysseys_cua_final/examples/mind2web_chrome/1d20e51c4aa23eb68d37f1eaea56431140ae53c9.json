@@ -1,0 +1,51 @@
+{
+  "id": "1d20e51c4aa23eb68d37f1eaea56431140ae53c9",
+  "snapshot": "chrome",
+  "instruction": "I’m thinking seriously about applying to Indiana University for graduate school, but I don’t want a one-program skim or a dead-end application portal. Please do a thorough public-web sweep across Indiana University’s official graduate program and department pages and help me narrow this down into a real shortlist I could use. I want you to identify 12 distinct IU graduate programs that are still publicly described on official pages, spread across at least 4 different schools or departments and, if possible, more than one IU campus. For each of the 12 programs, capture the degree type, the school or department, the campus, the main focus or specialization area, the published admissions requirements, the application deadline or note 'not shown' if it isn’t clearly posted, and any obvious funding or assistantship information if it is publicly listed. Then go one level deeper on the 6 strongest options by opening their program pages plus the most relevant admissions or deadline pages in separate tabs, and also check faculty, research, or curriculum pages so I can see what makes each program meaningfully different. After that, recommend the best 3 programs for a broadly motivated applicant who wants a strong academic fit, clear admissions information, and a realistic path to applying in the next cycle. In your final summary, explain why those 3 rose to the top, note any missing or ambiguous information that would require a direct inquiry, and leave the most useful official evidence tabs open for the final 6 programs so I can review them myself.",
+  "source": "https://iugraduate2025.cas.myliaison.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://iugraduate2025.cas.myliaison.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://iugraduate2025.cas.myliaison.com",
+    "reference_length": 8,
+    "level": "hard"
+  }
+}

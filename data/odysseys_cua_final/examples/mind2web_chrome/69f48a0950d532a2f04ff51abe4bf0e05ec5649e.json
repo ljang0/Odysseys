@@ -1,0 +1,51 @@
+{
+  "id": "69f48a0950d532a2f04ff51abe4bf0e05ec5649e",
+  "snapshot": "chrome",
+  "instruction": "I'm planning a trip from London to Seoul around July and want you to help me narrow things down in a realistic booking flow. First, compare the cheapest round-trip economy flight options you can find from London to Seoul for a departure on July 17th and return in early August using the flight sites available, and use what you find to identify the best-value option overall. Once you've got that flight shortlist and winner, switch to Booking.com and check two Seoul properties I might use for my whole stay — The Joseon Hotel and The Lotte Hotel. For each one, look at the guest review score and read recent reviews so I can tell whether either place seems reliably good enough for a pre-flight night. In the end, give me a concise recommendation that names the cheapest flight source and fare you found, summarizes whether The Joseon Hotel and The Lotte Hotel are generally very positive, and highlights at least three recent review takeaways for The Lotte Hotel so I can decide if I should book that hotel before the London flight.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "medium"
+  }
+}

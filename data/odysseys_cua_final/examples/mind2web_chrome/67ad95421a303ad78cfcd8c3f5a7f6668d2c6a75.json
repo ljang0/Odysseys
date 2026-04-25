@@ -1,0 +1,51 @@
+{
+  "id": "67ad95421a303ad78cfcd8c3f5a7f6668d2c6a75",
+  "snapshot": "chrome",
+  "instruction": "I’m helping a family member shop for an affordable used Toyota and want a realistic comparison across a couple of car sites before we decide what to pursue. On Edmunds, please search around Augusta, Georgia and find the cheapest used Toyota RAV4 listing that has both AWD and heated seats, then open the actual vehicle listing so you can confirm those features on the page and note the price, year, mileage, dealer or seller, and anything else basic that stands out; leave that listing open in its own tab so I can look at the photos and details later. Then, using that RAV4 as the benchmark for what the market looks like, go to Cars.com and search for any used Toyota within 50 miles of Augusta, GA priced at $10,000 or less, and open one matching listing that seems like a good budget reference so I can see what a lower-cost Toyota option looks like on another marketplace; keep that listing open too so I can compare the two tabs side by side. After that, on CarGurus, pull up the comparison details for the Toyota Camry XLE AWD and the Mazda3 Turbo Hatchback and capture the key specs for each — engine, horsepower, drivetrain, fuel economy, and MSRP — because I want to know whether sticking with Toyota’s AWD choices makes more sense than considering a non-Toyota AWD alternative. In the end, send me a concise summary with the Edmunds RAV4 listing details, the Cars.com budget Toyota listing details, and the side-by-side spec comparison.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "easy"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "6984e84f7f80fd923126e82006bbfaeeeec5b5d2",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to figure out the best realistic 'beer money' setup for someone in the UK, because I already know about Prolific and CloudResearch Connect but I don’t want to keep wasting time on sites that look good until you dig into them. Please do a serious public-web comparison of 12 to 15 UK-accessible platforms across the most relevant categories: survey/research panels, user-testing or interview platforms, cashback or receipt-reward apps, and general microtask sites. Start by checking the official public pages for each platform and confirm whether UK participants are accepted, what the platform mainly pays for, the payout method, the cash-out threshold, and any obvious waitlist, invite-only, or identity-check friction; if a field is not shown publicly, record it as 'not shown' instead of guessing. Then cross-check each platform with at least one independent public reputation source such as Trustpilot, Reddit discussions, app-store listings, or similar public review pages so I can tell the difference between 'legit but slow' and 'avoid this.' I want the final result in one comparison sheet with one row per platform and columns for platform name, category, UK eligibility status, task type, payout method, minimum cash-out, notable restrictions, public reputation signal, likely best use case, and your verdict. After that, rank the best 8 platforms for me in signup order: first the ones most worth applying to immediately, then the ones that are only worth using as filler. Keep the most useful evidence tabs open, including at least 6 official platform pages and at least 4 independent reputation or review pages, and end with the final comparison sheet open plus a short recommendation on whether I should mostly stick with Prolific and Connect or build a broader UK stack.",
+  "source": "https://connect.cloudresearch.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://connect.cloudresearch.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://connect.cloudresearch.com",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

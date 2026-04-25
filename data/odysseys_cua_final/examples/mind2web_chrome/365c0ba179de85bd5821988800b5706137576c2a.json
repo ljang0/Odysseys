@@ -1,0 +1,51 @@
+{
+  "id": "365c0ba179de85bd5821988800b5706137576c2a",
+  "snapshot": "chrome",
+  "instruction": "I want a compact current-events briefing I can skim in a minute or two, like the kind of snapshot a well-informed friend would pull together for me in a browser. Start on The New York Times homepage and grab the five biggest headlines that are visibly featured there right now, along with the section each one belongs to, because I want a broad read on the day before diving into anything niche; please open at least two of those headline stories in separate tabs so you can confirm the section labels and leave the NYT homepage open as a reference. Then use Google News or a normal Google search to find one recent article from a reliable publication about Call of Duty: Black Ops 6, open the actual article page, and give me the publication name plus the main takeaway so the briefing has one entertainment/tech item too. After that, go to Reddit and find the r/Futurology discussion asking what people think the future of the U.S. will be, read through the comment thread on the actual post page, and summarize the main themes people are expressing; keep that Reddit thread open so I can look at the tone myself. Finally, use Google to find a reliable source explaining how a U.S. federal government shutdown affects SNAP benefits, open the source page that actually answers it, and summarize clearly whether benefits continue and what exceptions or caveats apply, because I want one practical policy note in the mix. Please return everything as one concise briefing with labeled sections for NYT, Black Ops 6, Reddit sentiment, and SNAP shutdown guidance.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 6,
+    "level": "medium"
+  }
+}

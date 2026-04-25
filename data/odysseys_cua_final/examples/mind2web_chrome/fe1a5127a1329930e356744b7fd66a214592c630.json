@@ -1,0 +1,51 @@
+{
+  "id": "fe1a5127a1329930e356744b7fd66a214592c630",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to choose the best NCES public-use datasets for a serious secondary analysis project in education, and I don’t just want a quick list of names. Please do a thorough browser-based sweep of NCES public-use data options across the main program areas and build me a usable comparison I could actually start from. Start on NCES and identify at least 10 distinct NCES datasets or data collections that are publicly usable, drawing from a mix of areas like longitudinal studies, postsecondary data, assessment data, adult skills, early childhood, and school or district data where applicable. For each one, open the official NCES dataset or program page and, when available, also open the documentation, codebook, survey, or download page that helps confirm what is actually in the public-use files. I want you to compare each dataset on the questions I’d really care about before choosing one: what population it covers, approximate years available, unit of analysis, whether it is cross-sectional or longitudinal, whether the files are clearly public-use or have restrictions, what topics or variables it seems strongest for, and what download or access format is offered; if something is not shown, say not shown. Then narrow the full scan to the 5 strongest dataset options for someone studying educational opportunity and student outcomes, and explain the tradeoffs among them rather than just ranking blindly. Put the results into one organized comparison sheet or document with one section for all datasets scanned and one final shortlist section for the top 5 picks. Keep the most useful official NCES pages open for the finalist datasets, including at least a few documentation or download pages, so I can verify the evidence myself afterward.",
+  "source": "https://nces.ed.gov",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://nces.ed.gov"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://nces.ed.gov",
+    "reference_length": 14,
+    "level": "hard"
+  }
+}

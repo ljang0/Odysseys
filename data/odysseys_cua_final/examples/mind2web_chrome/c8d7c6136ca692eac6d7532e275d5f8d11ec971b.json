@@ -1,0 +1,51 @@
+{
+  "id": "c8d7c6136ca692eac6d7532e275d5f8d11ec971b",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to put together a really simple morning routine that starts with a quick math refresher and then shifts into beginner yoga I can actually keep using. Please start on Google and search for a video lesson that clearly teaches both explicit and recursive formulas for arithmetic sequences, then open the actual video page and note the title, creator or channel, and URL so I have a study piece to come back to; if it looks solid, leave that tab open for me. After that, go to YouTube and find a morning yoga video that’s right around 20 minutes long, open the actual video page, and tell me the title and duration so I can see whether it feels short enough for a real weekday routine. If that general option seems reasonable, stay on YouTube and specifically check whether Yoga With Adriene has a morning yoga video under 20 minutes that would fit the same need, and confirm from the video page or description whether it’s actually a vinyasa flow style session; please open that in its own tab too so I can compare the two yoga options side by side. To round this out, use Google to find at least three approachable or funny yoga instructors who post free classes on YouTube, and for each one give me the instructor’s name, a channel or website link, and a short note on why they seem especially beginner-friendly compared with the yoga videos you found earlier. In the end, I just want a concise resource list for this morning routine, with the key links, and please keep the math video plus the two yoga video tabs open so I can look at them myself.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "easy"
+  }
+}

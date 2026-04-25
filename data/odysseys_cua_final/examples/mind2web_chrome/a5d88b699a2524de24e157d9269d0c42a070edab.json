@@ -1,0 +1,51 @@
+{
+  "id": "a5d88b699a2524de24e157d9269d0c42a070edab",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to book a perfume bar or custom scent experience for a future wedding, and I don’t want just one random lead—I want a real shortlist I could confidently contact for a destination event anywhere in the world. Please use public web pages to find 8 to 10 perfume-bar, fragrance-bar, or scent-activation vendors that appear to do weddings, private events, or luxury event activations, and for each one verify whether they explicitly mention international travel, destination events, global service, or leave that as not shown if you can’t confirm it. Compare them on the details that would actually matter to me: whether they look wedding-appropriate, what kind of guest experience they offer, whether they seem able to handle on-site personalization, what regions they mention serving, how polished the setup looks from photos, and exactly how I would inquire or book them. Keep the strongest 4 vendor pages open, including at least 2 that clearly suggest international or destination capability and at least 1 that looks especially strong for weddings. Then give me a final ranked shortlist of the best 5 options, explain which single vendor you’d contact first for a destination wedding and why, and include the booking or contact method for each finalist.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 9,
+    "level": "hard"
+  }
+}

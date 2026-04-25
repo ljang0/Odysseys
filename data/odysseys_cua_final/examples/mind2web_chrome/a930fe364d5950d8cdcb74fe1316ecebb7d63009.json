@@ -1,0 +1,51 @@
+{
+  "id": "a930fe364d5950d8cdcb74fe1316ecebb7d63009",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to get a genuinely rigorous picture of the current market for AI and machine learning postdoc roles, because I want a shortlist I could actually use for applications instead of a shallow search result dump. Please start in CryptPad Sheets and create a spreadsheet named AI Postdoc Opportunities with columns for university or lab, department or institute or PI, exact position title, research area, deadline or start date if shown, posting link, and a short note saying how you verified it. Then use Google to build a coverage list of roughly the top 30 U.S. computer science schools along with major AI labs and related institutes, and work through that list carefully using official university job boards, department hiring pages, institute sites, lab pages, faculty group pages, and central hiring portals. As you find anything promising, open the actual posting page in its own tab and read enough of it to confirm it is really a current postdoctoral research opening in AI, machine learning, or a closely related area, not a faculty search, PhD opening, internship, or industry research scientist role. If you need a second official page like a lab hiring page or institute announcement to confirm it, open that too and leave both tabs available so I can inspect the evidence myself. For schools or labs where nothing turns up, please do a second pass across multiple official sources so the absence is at least reasonably verified. As you go, fill the spreadsheet with every verified opening and make sure each row corresponds to a posting tab you still have open. Near the end, keep the spreadsheet visible along with several of the posting tabs and any supporting hiring pages, because I want visual proof of the search trail, and then add a short summary of the main patterns you noticed and which opportunities look strongest or most relevant.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 7,
+    "level": "hard"
+  }
+}

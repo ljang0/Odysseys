@@ -1,0 +1,51 @@
+{
+  "id": "795bfe117e0f58e49ca37ae8e453a507859a2a2b",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to piece together a really cheap trip to London for two, so can you help me build it in a practical order and keep the actual pages open where it matters? Start on Booking.com and search London for 2 adults staying this December, then find me at least one hotel that comes in under £100 total for the 2-night stay, because that ultra-budget option is going to set the tone for everything else. Open the actual property page in its own tab so I can see the photos and location, and note the hotel name, stay dates, total displayed price, and link. Once you’ve got that baseline, stay on Booking.com and look up NOX Hotel for a 1-night stay for 2 adults on any date in 2026, just so I can tell whether my bargain London option is unusually cheap or more normal for the city; open the NOX listing page too and record the date and total displayed price you find. After that, use Google to look for at least two hotels near Washington, DC Union Station that show 4-star-or-higher guest ratings and nightly prices under $200, because I may want a backup benchmark for city lodging in another trip later; please open each hotel result in its own tab or go to the actual hotel posting page so I can verify they’re real options and still look live. Then, because I want the whole trip to stay low-cost overall, go to Amazon and shortlist three mid-to-low-priced headphones or earbuds with active noise cancellation for travel that fit the same budget mindset, and open each product page in a separate tab so I can compare them side by side. In the end, send me one clean summary with the hotel names, prices, dates, ratings where relevant, key headphone features, and links, and leave the Booking.com property tabs and the Amazon product tabs open for me.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "medium"
+  }
+}

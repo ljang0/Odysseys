@@ -1,0 +1,51 @@
+{
+  "id": "156e2acc95361db4145f5bc313abb63807750089",
+  "snapshot": "chrome",
+  "instruction": "I’m helping a veteran’s family pull together one practical benefits note while they wait on a few moving pieces, and I want it grounded in the actual pages so I can double-check things later. Please start on DFAS and find the exact form a surviving spouse would use to begin an SBP annuity claim, then open the actual form or claim page so you can confirm the form name and number and leave that DFAS page open as proof. Once you have that survivor-benefit piece, go to Reddit and look through VA benefits_claims discussions about getting more detail on an in-progress VA claim than the normal VA.gov tracker shows, especially references to the benefits_claims API endpoint or similar methods people are using, and open the most useful discussion thread in its own tab so I can see the comments myself. After that, use Google to get to the IRS guidance on cash gifts and figure out whether receiving money from relatives is taxable, who would be responsible for any gift tax reporting, and when a gift tax return is required, because the family may need temporary help while waiting on benefits; please open the actual IRS page, not just a summary site. Then use Google again to find a reliable source explaining what happens to SNAP benefits during a U.S. federal government shutdown, so we can understand whether food assistance usually continues, whether there are timing risks or exceptions, and what the practical takeaway is for monthly planning; open the source page you rely on so I can verify it. In the end, give me one short plain-language brief that starts with the SBP form name and number, then covers the VA claim-status tip from Reddit, then the IRS cash-gift guidance, and ends with the SNAP shutdown impact.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "easy"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "4b9eb54dde6c129b27ccb642ef24fb060e736913",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to get more comfortable cooking at home without buying a bunch of gear, so on Amazon please compare a few 3-quart electric multicookers and pick the best one for me if my main use is making rice and steaming vegetables in a small kitchen. I’d like you to open the most promising options in separate tabs so I can visually compare the listings, and then leave the chosen product page open with the title, price, capacity, and the features that make it best for simple beginner meals. Once you’ve picked that cooker, use Google to find one highly rated hot buttered rum recipe from a real recipe site and pull out the ingredients and basic steps, mainly as a simple example of the kind of recipe format I could actually follow. Since I’m still learning the basics, also go to Reddit and find a beginner-friendly discussion about how long to boil chicken breast, then give me the time range people recommend. After that, use the USDA DRI Calculator for a sample adult profile — age 30, 5 feet 6 inches, 150 pounds, sedentary activity level — and record the estimated daily carb, protein, and fat targets so I have a realistic nutrition reference point. Then, using Google, find the City of Milwaukee food license requirements and Wisconsin DATCP guidance for starting a small charcuterie or food business, and summarize the key licensing steps I’d need to look into if I ever wanted to turn basic home cooking into a small side business. Please keep the USDA results page and the Milwaukee licensing source page open so I can look at them myself, and finish with a short summary tying together the multicooker choice, the macro targets, and whether this setup seems like a practical beginner routine.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 6,
+    "level": "medium"
+  }
+}

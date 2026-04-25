@@ -1,0 +1,51 @@
+{
+  "id": "265abf0668773a8295847d5f5abf3bd003cbe3a3",
+  "snapshot": "chrome",
+  "instruction": "I want to stop randomly clicking tech videos and instead figure out which YouTube reviewers are actually worth following for my future gadget research. Please use public YouTube pages to build me a serious shortlist of 10 tech-related videos drawn from at least 6 different channels that seem most relevant to a shopper who cares about product reviews and first-impression videos for mainstream consumer tech like phones, laptops, audio gear, wearables, or similar gadgets. For each video, include the exact title, channel name, product category, how recent it is, and a short 2–3 sentence summary of what the reviewer actually says. While doing that, compare the channels on things like whether they show real hands-on testing, whether the video feels more like a quick impression or a deeper review, whether pros and cons are clearly stated, and whether the presentation style seems useful for someone trying to decide what to buy. Keep at least 4 of the strongest video tabs open and at least 3 channel pages open so I can review the evidence myself. At the end, recommend the best 3 channels for me to follow going forward, explain what each is best for, and identify the best 5 videos from your set if I only have time to watch a few. Prepare a presentation in CryptoPad presentations of a rundown on your recommendations and analysis.",
+  "source": "https://www.youtube.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.youtube.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.youtube.com",
+    "reference_length": 12,
+    "level": "hard"
+  }
+}

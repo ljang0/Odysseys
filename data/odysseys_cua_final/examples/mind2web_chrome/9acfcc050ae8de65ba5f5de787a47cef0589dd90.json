@@ -1,0 +1,51 @@
+{
+  "id": "9acfcc050ae8de65ba5f5de787a47cef0589dd90",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to choose a babywearing jacket for a future cold-weather season, and I don’t want just one random product link. Please do a serious browser-based comparison of 12 babywearing jacket options across at least 6 brands or retailers, including H&M if they still have a relevant option, and use only public product pages. For each option, capture the exact product name, listed price, whether it is a true babywearing jacket or a regular coat plus insert, whether the insert is included or sold separately, front-carry versus back-carry support if shown, maternity use if shown, weather clues like fleece/water-resistant/down, available size range if shown, and anything important from the product photos or description that affects real-world use. Then check the sizing/help or return-policy pages for the same brands when available so I can see which options are least risky to order online, and note ‘not shown’ anywhere the site doesn’t say. Narrow the list to the 5 strongest options for a practical buyer who cares about warmth, ease of use, and not overspending, and explain the tradeoffs between best budget, best for colder weather, best for extended maternity-to-babywearing use, and best overall. Keep the final 5 product pages open along with at least 3 relevant size-guide or return-policy pages and at least 2 pages with strong product-photo evidence, so I can review the finalists in the browser afterward. End with one organized comparison table and a clear recommendation. Make a presentation for me in CrptoPad so I can easily go through your findings.",
+  "source": "https://www2.hm.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www2.hm.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www2.hm.com",
+    "reference_length": 7,
+    "level": "hard"
+  }
+}

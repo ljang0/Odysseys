@@ -1,0 +1,51 @@
+{
+  "id": "a24232e8f6e7e654f09be4e219e692af4fec62a5",
+  "snapshot": "chrome",
+  "instruction": "I’m considering booking easyJet for a future Europe trip, but before I do I want a serious browser-based risk check rather than just a couple of random anecdotes. Please research easyJet complaints across public sources and build me a practical picture of what goes wrong most often and whether the airline’s published support and passenger-rights information actually covers those situations. Start by finding at least 18 distinct recent customer complaints from at least 4 different public sources, and group them into the biggest recurring themes like delays, cancellations, refunds, baggage, check-in, customer service, or anything else that clearly shows up. For each complaint you keep, note the topic, where it was posted, and a short plain-English summary of what happened. Then open easyJet’s own public help pages for the main complaint themes you found and compare what the airline says customers should do in those situations, including contact/help options and any refund, disruption, or baggage guidance that is publicly available. After that, check at least 3 independent public passenger-rights or consumer-guidance sources so I can see what travelers may actually be entitled to when flights are disrupted or problems occur. Keep the most useful evidence tabs open from both the complaint sources and the official/help pages so I can inspect them myself. Finally, give me one organized decision memo that covers: the top recurring complaint themes, how often each theme appeared in your 18-plus examples, what easyJet’s own pages say about those issues, where outside guidance seems to support or contradict the practical customer experience, and your bottom-line judgment on whether easyJet looks acceptable for a budget-conscious traveler, risky unless the fare savings are large, or worth avoiding for certain trip types.",
+  "source": "https://www.easyjet.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.easyjet.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.easyjet.com",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

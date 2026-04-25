@@ -1,0 +1,51 @@
+{
+  "id": "fbcfa176b2e1aa42200d4f3adb66dcf0a6ca62ee",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to put together a very small monthly subscription budget and want to compare a couple of creator memberships against ChatGPT so I can see what actually fits. Please start on Patreon with Matt and Shane’s Secret Podcast and note the membership tier names shown on their page, then also open the Patreon pages for Matt and Shane’s Secret Podcast and Chris Sain in separate tabs so I can visually compare the available tier names and prices side by side. After that, go to ChatGPT’s pricing page on chatgpt.com and capture the current plan names and prices, because I want to know whether adding ChatGPT would still be realistic alongside just one creator membership. To round things out, use Google to get to the actual HellHades membership plans page and check whether any plan specifically mentions interface improvements or automation features, since that kind of perk would make the comparison more meaningful than price alone. Please leave the Patreon tabs and the ChatGPT pricing page open so I can glance at them afterward, and then give me a concise summary that groups the Patreon tiers, ChatGPT pricing, and the HellHades feature note into a simple budget-minded recommendation.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "easy"
+  }
+}

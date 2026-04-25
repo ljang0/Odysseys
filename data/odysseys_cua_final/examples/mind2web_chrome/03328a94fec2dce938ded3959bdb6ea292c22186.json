@@ -1,0 +1,51 @@
+{
+  "id": "03328a94fec2dce938ded3959bdb6ea292c22186",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to figure out whether the Kia K5 GT should actually make my next test-drive shortlist, not just watch one random review. Start on YouTube and find 10 recent, substantive video reviews or comparison videos that cover the Kia K5 GT, and record for each one the video title, channel name, approximate viewpoint of the reviewer, and whether the review is mainly positive, mixed, or negative. Keep the 4 most useful review tabs open, including at least one straight review and at least one head-to-head comparison. Then open Kia’s official K5 GT pages and verify the current core facts I’d care about as a shopper: engine/performance details, transmission, notable standard features, warranty, and starting price or price range if shown. After that, compare the K5 GT against exactly 4 realistic sporty sedan alternatives on public pages from official manufacturer sites, using models that are actually plausible cross-shops for someone considering a quick midsize or near-midsize sport sedan. For those 5 cars total, compare price, horsepower, drivetrain, key comfort or tech features, and anything clearly positioned as performance-oriented. Next, check public safety and ownership-risk signals for the Kia K5 GT using sources like IIHS, NHTSA, recall pages, and owner-review or reliability pages if available, and note anything that looks like a meaningful concern or a reassuring sign; if a field is not shown, say not shown. Finally, give me a ranked recommendation with exactly 3 outcomes: best value pick, best performance-leaning pick, and best all-around daily-driver pick. Explain where the Kia K5 GT lands, what kind of buyer it fits best, and whether I should prioritize it for a test drive now or focus on one of the alternatives instead. Leave the key review, official spec, and safety/evidence pages open so I can inspect them afterward.",
+  "source": "https://www.youtube.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.youtube.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.youtube.com",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

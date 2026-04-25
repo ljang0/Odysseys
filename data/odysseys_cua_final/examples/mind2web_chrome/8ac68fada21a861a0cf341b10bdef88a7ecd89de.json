@@ -1,0 +1,51 @@
+{
+  "id": "8ac68fada21a861a0cf341b10bdef88a7ecd89de",
+  "snapshot": "chrome",
+  "instruction": "I’m putting together a small study pack for a 5th grader and want it to feel practical, not overwhelming. Please start on Google and find one printable spelling worksheet that would work for a 5th grader who may have dyslexia, ideally something with a clean layout and readable formatting, and open the actual worksheet page so you can verify it really looks printable; keep the worksheet title and the direct page or download link, and leave that tab open so I can look at it later. Then, using that same age level, go back to Google and find one free, kid-friendly math practice site for 5th grade, and don’t just name the homepage — open the exact page where a 5th grader should begin practicing so I have a real starting point, and keep that in its own tab too. After that, use Google to find a video lesson that clearly covers both explicit and recursive formulas for arithmetic sequences as a stretch resource for later, then open the actual video page, start playing it, and tell me the title, URL, and creator or channel so I know it’s the right lesson. Finally, go to Citation Machine and confirm there’s a citation generator there that supports both APA and Harvard styles, because I want one place to cite the worksheet, the math site, and the video; if you can, navigate to where those style options are visible and leave that page open as proof. At the end, give me a short organized resource list with links for the worksheet, the math starting page, the video, and the citation generator site.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "medium"
+  }
+}

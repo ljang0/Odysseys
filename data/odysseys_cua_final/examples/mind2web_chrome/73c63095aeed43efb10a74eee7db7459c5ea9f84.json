@@ -1,0 +1,51 @@
+{
+  "id": "73c63095aeed43efb10a74eee7db7459c5ea9f84",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to sort out a realistic housing plan in Grand Rapids, Michigan and want to compare a normal rental against cheaper live-in alternatives, with a hotel as a short-stay fallback while I go look at places. Please start on Zillow and search Grand Rapids rentals with the monthly rent set between $1,400 and $2,400, then open one listing that looks like a real option in its own tab so I can see the photos and map, and grab the basics for it like the address, monthly price, and the Zillow listing page. Use that exact monthly rent as the benchmark for whether a trailer or other small living setup would actually save me money, then go to Craigslist for Grand Rapids and find at least three listings that seem suitable for living in and are priced below that Zillow benchmark; open the actual posting pages so you can verify they’re still live and note each title, price, and link. After that, because I may need somewhere temporary while I travel to inspect options, go to Booking.com and look up a hotel in Grand Rapids with visible guest reviews, open the property page, and summarize the overall guest review score plus at least three takeaways from recent reviews so I can tell what staying there would really be like. Leave the Zillow tab and the Booking.com hotel page open so I can compare them visually afterward, then give me a concise recommendation on how the rental and cheaper Craigslist alternatives stack up against the hotel, and say which seems better reviewed for a temporary stay.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "medium"
+  }
+}

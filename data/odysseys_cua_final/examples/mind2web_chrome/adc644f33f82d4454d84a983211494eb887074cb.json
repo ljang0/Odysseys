@@ -1,0 +1,51 @@
+{
+  "id": "adc644f33f82d4454d84a983211494eb887074cb",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to choose the best-value hotel for a 2-night future stay near Walt Disney World, and I don’t want a single listing lookup or a vague top-10 blog list. Please start from a major booking site like Hotels.com or similar and build a serious comparison of exactly 12 hotel options that are plausibly within about 15 minutes’ drive of Walt Disney World for the same 2-night stay window. For each hotel, capture the nightly price or total stay price shown, guest rating, review count if shown, parking fee, resort fee, cancellation policy if visible, and mark anything that is not shown as “not shown.” Then cross-check each candidate in Google Maps so the distance/time-to-Disney claim is realistic, and open the map or directions view for the strongest contenders. I also want you to open the actual listing pages for at least 6 of the 12 hotels and compare the room photos and amenity details so we can weed out places that are cheap but clearly worse in quality or location. After that, narrow the list to the best 5 options balancing low price and strong ratings, and give me a final recommendation for three categories: cheapest acceptable pick, best overall value, and nicest option that still seems reasonably priced. Keep the most useful hotel listing tabs and map tabs open at the end so I can review the finalists myself. Can you also separately provide the transit options for getting from each stay to the park, and open the directions for each in Google Maps?",
+  "source": "https://www.hotels.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.hotels.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.hotels.com",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

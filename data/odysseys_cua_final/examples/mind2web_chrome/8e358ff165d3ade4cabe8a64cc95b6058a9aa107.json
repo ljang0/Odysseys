@@ -1,0 +1,51 @@
+{
+  "id": "8e358ff165d3ade4cabe8a64cc95b6058a9aa107",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to decide whether the adidas Everyset Training Shoes for Men on Sierra are actually the best buy for me in men’s size 12, or just one decent option in a crowded field. Please start on Sierra, confirm the live product page for the adidas Everyset, and note the current price, any strike-through/original price if shown, available colors, and whether size 12 is in stock. Then build me a serious comparison set of exactly 10 men’s training or cross-training shoes in size 12 total, including the Sierra adidas pair plus 9 comparable options from public product pages on Sierra and other major retailers or brand sites. For each shoe, capture the product name, retailer, current price, original price if shown, whether size 12 is available, intended use cues from the page, and one or two practical notes from product details or review summaries such as stability, cushioning, versatility, or durability; if any field is missing, write not shown. I also want you to sanity-check the buying experience, so for each retailer represented in your comparison, open the public return-policy or shipping-information page and note the key basics that would matter to a normal buyer, like return window, obvious return fees if stated, and any free-shipping threshold if publicly shown. After that, compare the 10 shoes and narrow them to a final shortlist of 4 that cover different priorities: best overall gym shoe, best value, best for heavier lifting/stability, and best for mixed cardio-and-weights use. Keep the most useful product tabs open for those 4 finalists, plus the Sierra adidas Everyset page and the key policy pages you used, so I can review the evidence myself. End with a concise recommendation telling me whether I should buy the Sierra adidas Everyset now or pick one of the alternatives instead, and why.",
+  "source": "https://www.sierra.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.sierra.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.sierra.com",
+    "reference_length": 7,
+    "level": "hard"
+  }
+}

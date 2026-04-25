@@ -1,0 +1,51 @@
+{
+  "id": "d17c0e2905a166df99fa492edc8f7cc5a641de4e",
+  "snapshot": "chrome",
+  "instruction": "I’m helping shape a future women’s cancer-equity outreach project, and I don’t want a generic summary — I need a browser-based evidence sweep that helps me decide which inequities are most important to focus on first. Please use public pages from authoritative sources such as NCI, CDC, ACS, NIH, major cancer centers, and peer-reviewed or professional society sources, and build me one organized briefing document that I could actually use. I want you to identify at least 12 distinct drivers of cancer inequities affecting women, but also group them by where they show up in the care pathway: prevention or risk exposure, screening and early detection, diagnosis, treatment access or quality, and survivorship or follow-up. To keep this grounded, compare at least 4 cancer areas that are especially relevant for women — for example breast, cervical, ovarian, and endometrial or another clearly justified substitution if the evidence is stronger — and note which drivers appear across multiple cancers versus which seem more specific to one cancer type. I also want at least 6 concrete intervention or program examples from reputable public sources that aim to reduce these inequities, such as navigation programs, screening access efforts, trial-inclusion initiatives, rural access models, or culturally tailored outreach, and for each one note what inequity it is trying to address and whether any outcome or evaluation is publicly described. As you work, keep the most important evidence tabs open, including at least 6 key source pages that directly support the final priorities, and leave open at least 2 public data or dashboard pages that help show the burden or disparity patterns. In the final briefing, end with a ranked top-5 priority list for where a women’s cancer-equity project should focus first, and make each priority include the main driver, the affected care stage, the cancer areas it shows up in, the strongest supporting sources, and a short explanation of why it belongs near the top.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "hard"
+  }
+}

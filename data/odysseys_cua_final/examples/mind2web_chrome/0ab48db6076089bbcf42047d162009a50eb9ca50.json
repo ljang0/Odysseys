@@ -1,0 +1,51 @@
+{
+  "id": "0ab48db6076089bbcf42047d162009a50eb9ca50",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to put together a simple, semi-healthy meal prep menu for the week, mostly so I can batch-cook lunches and have a couple of make-ahead desserts ready too. Could you start on Google and search for an easy Instant Pot lentils recipe, then open the actual recipe page and pull out the basics I’d need for meal prep: what type of lentils it uses, the water-to-lentil ratio, and the cook time? Please leave that recipe tab open so I can glance at it later. Then go to Ambitious Kitchen and find a healthy turkey chili recipe that includes extra vegetables, because I want something hearty to pair with the lentils for lunches; open the recipe itself and note the exact recipe title plus at least two added vegetables from the ingredients list, and keep that page open in its own tab too so I can compare the two recipes side by side. After that, on Feel Good Foodie, look up recipes for halva, chia pudding, and pecan bars, open the actual recipe page for each one in separate tabs, and grab the page URLs so I have the real recipe links. Once you’ve seen all three, pick the two dessert options that seem most practical for make-ahead prep and tell me which two you’d choose. At the end, give me one concise meal prep summary that explains the lentil base, the turkey chili pairing, and the two dessert picks with their Feel Good Foodie recipe URLs.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "easy"
+  }
+}

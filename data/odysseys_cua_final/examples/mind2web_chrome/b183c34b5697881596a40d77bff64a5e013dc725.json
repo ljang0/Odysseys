@@ -1,0 +1,51 @@
+{
+  "id": "b183c34b5697881596a40d77bff64a5e013dc725",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to make a budget-conscious Apple purchase and want a real browser-based comparison, not just a generic summary. Please start on Apple’s site and open the current iPad Pro page and iPad Air page in separate tabs so I can compare them side by side, then pull out at least three concrete differences like the chip, display, storage options, camera setup, accessory support, or starting price, and tell me whether the Pro seems worth considering for someone mainly trying to save money. If the Air looks like the more practical route, switch over to Best Buy and look up the 11-inch iPad (A16, Wi‑Fi, 128GB) listings in pink and blue, and also check the blue open-box options in good and excellent condition, because I want to know the cheapest acceptable way to buy one right now; open the relevant product pages so you can verify the color and condition details on the actual listings, and leave the cheapest one open. After that, go back to Apple and check the current MacBook Pro lineup so I have a laptop price ceiling, and identify the lowest starting-price MacBook Pro model Apple is selling right now. Then head to Amazon, search for “iphone 17 pro,” and look through the live results for two listings that are obviously actual phones, because I want to avoid junk search results while comparison shopping; open those result pages too so the titles and prices are clearly visible. In the end, give me a short recommendation that connects the iPad Pro vs Air comparison to the Best Buy iPad choice and tells me exactly how much cheaper that iPad option is than the cheapest MacBook Pro, while keeping the iPhone price in mind.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "medium"
+  }
+}

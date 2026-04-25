@@ -1,0 +1,51 @@
+{
+  "id": "a5724e1c94ac221f0a53765c51f625b7bc3cc58e",
+  "snapshot": "chrome",
+  "instruction": "I’m helping a university researcher who works on AI safety and alignment, and I need a solid list of current funding options they could realistically apply for. Please start on Google and search for active grant programs from official funder sites that support research in artificial intelligence, AI safety, alignment, trustworthy machine learning, or responsible AI, and focus on opportunities where academic researchers or university-based investigators are eligible. As you find promising ones, open the official opportunity page for each grant in its own tab so I can visually compare them later, and only keep it if the page itself makes it clear the opportunity is still active or open rather than archived or closed. I need at least 15 verified opportunities, and for each one please pull the program name, funding organization, research topic or focus area, award size if the page lists one, the application deadline, and the official URL. Once you’ve gathered enough, go to CryptPad Documents and create a document titled AI Safety Grant Opportunities, then put the grants into a clean table or structured list that matches the open tabs one-for-one. After that, add a short summary at the end explaining what kinds of organizations seem to fund AI safety-related research most often—like government agencies, private foundations, nonprofits, industry labs, or academic consortia—because I want to see where the strongest funding patterns are. Please leave the CryptPad Document open at the end, and keep the official grant tabs open too so I can spot-check the pages myself.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 9,
+    "level": "hard"
+  }
+}

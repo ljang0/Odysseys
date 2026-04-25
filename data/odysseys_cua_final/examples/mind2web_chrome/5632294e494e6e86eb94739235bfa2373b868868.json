@@ -1,0 +1,51 @@
+{
+  "id": "5632294e494e6e86eb94739235bfa2373b868868",
+  "snapshot": "chrome",
+  "instruction": "I’m getting ready to do a full DIY front and rear brake job on my 2020 Chevrolet Traverse with the 3.6L V6, so could you use RockAuto to look up OEM-style front and rear brake pad and rotor kits for that exact vehicle and jot down the key details like brand, part line, what each kit includes, and anything that helps me tell the options apart? If there are separate front and rear kits, open the actual product pages or info popups so I can visually compare them, and leave the most relevant RockAuto results open in their own tabs. Once you’ve got the parts figured out, go to the Haynes US site and find the repair manual that would actually help with brake pad and rotor replacement for this Traverse, and grab the manual title, link, and coverage years so I know it matches my SUV. Then check Amazon for a hose clamp tightening tool that looks suitable to keep nearby for the job, give me one solid option with its current price, and open the product page so I can see the photos and reviews for myself. In the end, send me a short summary with the RockAuto brake kit details, the Haynes manual name and link, and the Amazon tool name and price.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "easy"
+  }
+}

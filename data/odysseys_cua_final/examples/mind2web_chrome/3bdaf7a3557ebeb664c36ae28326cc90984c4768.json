@@ -1,0 +1,51 @@
+{
+  "id": "3bdaf7a3557ebeb664c36ae28326cc90984c4768",
+  "snapshot": "chrome",
+  "instruction": "I want to do a serious black history research session on the relationship between Cassius Clay, later Muhammad Ali, and Malcolm X, and I don’t want just a quick summary from one video. Please use public pages to build me a careful research brief that I could actually study from. Start by finding at least 8 credible sources total, including at least 3 primary or archival sources if available, such as interviews, speeches, letters, newspaper archives, museum or library collections, or official historical institutions, and at least 3 strong secondary sources like biographies, reputable history outlets, or university material. As you work, keep the most useful evidence tabs open, especially the best primary-source pages and at least 2 strong secondary-source pages that clearly explain the relationship.\n\nI want you to figure out the relationship as a timeline, not just a paragraph, so trace at least 6 dated milestones covering how they met, how Malcolm X influenced Clay/Ali’s religious and public identity, what changed around Ali’s rise to the heavyweight title, how the Nation of Islam split affected them, and what happened in the period before Malcolm X was assassinated. Where exact dates or wording are unclear, say not shown rather than guessing.\n\nThen compare how different credible sources frame the relationship. I want at least 3 points of agreement and at least 2 meaningful differences in interpretation, for example whether Malcolm X was mainly a mentor, political guide, spiritual influence, media strategist, or some combination, and how historians describe the reasons for the break between them. If a documentary clip or educational video is especially useful, include it, but anchor the research in credible written sources rather than video alone.\n\nFinish with one organized research brief that includes: a source list grouped into primary versus secondary, the 6-or-more-point timeline with dates, a concise explanation of the relationship’s development and rupture, the agreement-versus-disagreement section across sources, and a short final takeaway on why this relationship matters in Black history and in Ali’s public transformation. Leave the final research brief open along with the key evidence tabs you relied on most. Generate a presentation in CryptoPad Presentations I can present your findings on.",
+  "source": "https://www.youtube.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.youtube.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.youtube.com",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

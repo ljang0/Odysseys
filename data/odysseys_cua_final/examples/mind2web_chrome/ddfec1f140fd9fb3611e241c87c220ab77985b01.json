@@ -1,0 +1,51 @@
+{
+  "id": "ddfec1f140fd9fb3611e241c87c220ab77985b01",
+  "snapshot": "chrome",
+  "instruction": "I’m planning a future climate-controlled shed that I might use as a backyard office or workshop, and I don’t want a shallow 'watch two videos and guess' answer. Please do a real browser-based comparison of insulation approaches and help me choose one assembly I could actually build. Start by reviewing at least 8 strong public sources total: at least 3 YouTube videos that show or explain shed or small outbuilding insulation, at least 3 non-video sources from building-science, manufacturer, or energy-efficiency guidance pages, and at least 2 retail product pages with current specs or pricing. Use those sources to compare exactly 3 full insulation strategies for a climate-controlled shed—for example some mix of fiberglass or mineral wool batts, rigid foam board, and spray foam—covering walls, roof/ceiling, and floor, not just one cavity type. For each strategy, note the stated or implied R-value approach, how moisture or vapor control is handled, how much interior space it consumes, the likely DIY difficulty, and the main failure risks or watch-outs; if a source does not show something, write 'not shown.' Then build one practical recommendation for a common small shed size like 10x12, including a suggested wall assembly, roof/ceiling assembly, and floor assembly that work together for a climate-controlled setup. After that, use public retail pages to price out a rough materials basket for each of the 3 strategies as realistically as you can from visible package sizes or unit pricing, and compare the total estimated material cost with 'not shown' where needed. Keep the most convincing evidence tabs open for the final winner, including at least one video tab, one technical/spec page, and one or two retail product pages, so I can sanity-check the recommendation visually afterward. Finish with a concise decision memo in Cryptopad Documents that names the best overall option, the best budget option, and the option you would avoid unless a special condition makes it worthwhile.",
+  "source": "https://www.youtube.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.youtube.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.youtube.com",
+    "reference_length": 17,
+    "level": "hard"
+  }
+}

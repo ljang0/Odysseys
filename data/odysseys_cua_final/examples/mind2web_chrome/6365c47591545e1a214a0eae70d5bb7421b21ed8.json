@@ -1,0 +1,51 @@
+{
+  "id": "6365c47591545e1a214a0eae70d5bb7421b21ed8",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to choose a consumer DNA test primarily for health predisposition insights, not just ancestry, and I want you to do a serious browser-based comparison so I can make one confident purchase instead of guessing from Amazon listings. Start by identifying 6 to 8 consumer DNA kits that publicly advertise health-related genetic reporting or health predisposition information, using official company product pages first and expanding beyond Amazon if that gives a clearer picture. For each kit, check the official product page and the company’s help, FAQ, or report-description pages to record exactly what kind of health information is included, such as predisposition reports, carrier status, wellness traits, pharmacogenomics, or anything else relevant; if something is not shown clearly, mark it as not shown rather than assuming. Then verify the medical framing on public authoritative pages where useful, like FDA or major health-system guidance pages, so the comparison distinguishes between true consumer risk reports and broader wellness-style claims. I also want the practical decision details that matter before buying: list price, whether there is a subscription or paid add-on, sample type, stated turnaround time, whether raw data download is offered, whether data deletion is described, and whether the company says customer data may be used for research or shared with partners. Open and keep the most important evidence tabs available as you work: at least 4 official kit pages, at least 3 privacy or data-control pages from different companies, and 2 authoritative public guidance pages that help interpret what these tests can and cannot tell me. After comparing everything, narrow it to the best 3 options for someone whose top priority is meaningful health predisposition reporting with reasonable privacy controls, and explain the tradeoffs between them. End by recommending exactly 1 kit as the best overall choice, 1 runner-up for stronger privacy sensitivity, and 1 budget-conscious alternative, citing which health-predisposition-related features each one actually offers and clearly noting any important limitations or not-shown details. Leave the final recommendation pages and the most useful comparison evidence tabs open. Create a presentation for me to read your analysis in on CrpytoPad Presentations.",
+  "source": "https://www.amazon.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.amazon.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.amazon.com",
+    "reference_length": 9,
+    "level": "hard"
+  }
+}

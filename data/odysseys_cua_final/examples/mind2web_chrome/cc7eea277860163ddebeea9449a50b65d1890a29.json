@@ -1,0 +1,51 @@
+{
+  "id": "cc7eea277860163ddebeea9449a50b65d1890a29",
+  "snapshot": "chrome",
+  "instruction": "I want to figure out where I should actually go in the Grand Rapids area if I want to make art in public instead of just staying home with a craft kit, and I don’t want this to stop at one studio. Please include Spruced Studio, but build me a real comparison of 10 public-facing art or craft places in or near Grand Rapids that appear to offer beginner-friendly workshops, drop-in sessions, one-off classes, or other ways for regular adults to participate without already being members. Use public pages only, and for each place capture the art medium, whether it looks more like drop-in versus scheduled workshop, any visible beginner-friendly signal, the price or price range if shown, the neighborhood or city area, and the clearest attendance or registration instructions; if something is missing, mark it as not shown. Open and keep the most useful workshop or class pages for the strongest 5 options, and for at least 3 of those also open a map, photo, or location page so I can sanity-check the vibe and area. When you’re done, recommend exactly 4 places for different needs: best low-pressure first try, best date-night or group outing, best hands-on craft skill builder, and best overall option if I wanted to start doing this regularly.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "hard"
+  }
+}

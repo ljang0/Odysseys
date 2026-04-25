@@ -1,0 +1,51 @@
+{
+  "id": "a5a6aae50363919e5500634aa0f97211c3d06feb",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to figure out the best 5-day camper-van road trip in Iceland for a future trip, and I don’t want a generic blog itinerary. Please use public sources to compare the most realistic 5-day options first, then build one final route that focuses on the famous highlights but is still reasonable to drive in a camper van. Start by checking a campground source like Tjalda plus maps and a few reputable Iceland travel pages so you can decide whether this should be a South Coast-heavy loop, a Golden Circle plus South Coast plan, or another clearly better 5-day route. Once you’ve chosen the best route, make me a day-by-day itinerary for exactly 5 days with the driving sequence, estimated driving time for each day, and the main stops and attractions in order. Include at least 12 total sightseeing stops across the trip, but keep the plan realistic rather than cramming everything in. For each night, verify one legal campground option on a public page and note the location plus any obvious camper-relevant details like showers, power, season, or check-in rules; if a detail is missing, say not shown. Also flag any day that looks especially weather- or road-sensitive and give 2 backup substitutions for the whole trip in case conditions are poor. Please keep the key evidence visible in the browser by leaving open the final map view for the chosen route, the 5 campground pages you relied on, and 3 especially useful attraction or planning pages with photos or visitor info so I can sanity-check the plan afterward. End with a concise recommendation explaining why this is the best 5-day camper-van version of Iceland rather than trying to overreach into an unrealistic Ring Road sprint.",
+  "source": "https://tjalda.is",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://tjalda.is"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://tjalda.is",
+    "reference_length": 21,
+    "level": "hard"
+  }
+}

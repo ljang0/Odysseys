@@ -1,0 +1,51 @@
+{
+  "id": "940d8aaa7700347c9fd9a0508e5de2e07c23cdb5",
+  "snapshot": "chrome",
+  "instruction": "I’m helping a friend figure out housing near MIT in Cambridge, so could you use a real browser to look for apartments that are roughly within a 20-minute commute to MIT and keep this organized for me? Start with Google to find solid rental sites that actually have Cambridge and nearby Boston-area listings, then use places like Apartments.com and any other major listing sources you find to search for either 1-bedroom apartments under $3,000 a month or 2-bedroom apartments under $5,000 a month for a roommate setup. As you find listings that seem to fit, open each actual listing page in its own tab so I can visually compare the photos, addresses, and details later, and only keep tabs open for listings that really match the bedroom and budget limits. For every listing you keep, verify the rent, bedroom count, and building name or address on the listing page itself, then use Google Maps to check the commute to MIT and keep only the ones that look to be about 20 minutes or less. After that, create a spreadsheet in CryptPad Sheets called MIT Apartment Options and record about 20 good options with the building or address, monthly rent, number of bedrooms, estimated commute time to MIT, and the direct listing link. Please make sure every row in the sheet corresponds to a listing tab that is still open on the actual apartment page, because I want to be able to click around and inspect them afterward. Once the sheet is filled out, add a short note summarizing which neighborhoods seem to have the most within-budget options so I can see where the best concentration of listings is.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 7,
+    "level": "hard"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "59c9d2da1b99ec2e643aadf7a74d31998cda2376",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to figure out whether I should focus my post-grad job search on New York City for film and adjacent media work, and I want a real browser-based sweep instead of just a few random listings. Start with LinkedIn, but don’t stay stuck there if better public pages exist. I want you to find exactly 18 current NYC-area opportunities that are genuinely entry-level, internship, assistant, coordinator, production, post-production, development, distribution, exhibition, or other clearly film-related early-career roles. Use a mix of public sources such as LinkedIn job pages, company careers pages, entertainment job boards, and studio or production-company hiring pages, and make sure at least 6 of the 18 come from sources other than LinkedIn so this is not just one-site sampling. For each opportunity, record the title, company, borough or city area if shown, whether it is internship or full-time, whether it looks remote, hybrid, or on-site, salary or pay if shown, and the key qualifications or software/tools mentioned; if any field is missing, mark it as not shown. As you work, open and keep visible the strongest evidence tabs for at least 8 of the listings, including a mix of source types and at least 3 actual employer career pages, so I can sanity-check that the openings are real. After collecting the 18 roles, compare them and identify the 6 best fits for a recent graduate with limited professional experience but serious interest in film, and briefly explain why those 6 rise to the top based on accessibility, relevance, and transparency of requirements. Then give me a short synthesis of what this search suggests about the NYC entry-level film market right now: which role types appear most often, whether paid opportunities seem common enough, and whether the market looks broad enough that I should concentrate my search there for the next few weeks. Leave the final shortlist and the most useful evidence tabs open. Make a spreadsheet with all the listings and the links to apply.",
+  "source": "https://www.linkedin.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.linkedin.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.linkedin.com",
+    "reference_length": 4,
+    "level": "hard"
+  }
+}

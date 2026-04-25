@@ -1,0 +1,51 @@
+{
+  "id": "e8748499c5ee313e307ba6819d4978cd061d8445",
+  "snapshot": "chrome",
+  "instruction": "I’m seriously considering a Honda Civic Hybrid for my next car, but I don’t want just one review pulled out of context. Please do a thorough browser-based comparison that helps me decide whether the Civic Hybrid is actually the best fit in the compact-hybrid segment. Start by finding at least 6 professional reviews of the Honda Civic Hybrid from reputable automotive publications, and for each one capture the model year reviewed plus the main pros, cons, and overall takeaway. Then verify the current official Honda Civic Hybrid trims, key specs, fuel-economy figures, and notable feature differences on Honda’s public pages. After that, compare the Civic Hybrid against 3 realistic rivals in the same general class—such as the Toyota Prius, Toyota Corolla Hybrid, and Hyundai Elantra Hybrid, or close substitutes if one of those is not comparable enough—using official manufacturer pages plus professional reviews. I want the comparison to cover starting price, mpg or equivalent efficiency, horsepower, cargo space, standout tech or comfort features, and whether reviewers describe it as more fun-to-drive, more practical, or more value-oriented. Also check public safety sources like IIHS and NHTSA if available, and include what is shown there rather than guessing. Keep the most useful evidence tabs open as you go, including at least 3 Honda-related tabs, at least 3 rival-model tabs, and at least 2 review or safety tabs that best support the final recommendation. Finish with a concise buyer-oriented decision memo that tells me whether the Civic Hybrid is the best overall pick, the best fun-to-drive pick, or not the best choice for value, and clearly note any important fields as not shown if the public pages don’t provide them. Prepare a presentation in CryptoPad that makes it fun to read through and read your recommendations.",
+  "source": "https://www.idehonda.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.idehonda.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.idehonda.com",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

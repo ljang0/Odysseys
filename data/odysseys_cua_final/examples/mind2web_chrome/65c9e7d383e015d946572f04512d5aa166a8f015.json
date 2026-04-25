@@ -1,0 +1,51 @@
+{
+  "id": "65c9e7d383e015d946572f04512d5aa166a8f015",
+  "snapshot": "chrome",
+  "instruction": "I’m putting together a quick, accessible study workflow for myself on latent growth models, and I want it to feel grounded in what I’d actually see in a browser rather than just a generic summary. Please start on Bing and search for “Latent Growth Models,” then look only at the main organic web results on the first page and pull out the top three with their titles, source sites, and a one-line note on what each seems to cover, because I want to know which sources are most visible right away. Open those three results in separate tabs and leave the search results page open too so I can compare them afterward. Once you’ve got that context, use Google to find one solid ChatGPT prompt template for turning source material into an outline, ideally from a page that actually shows the full prompt wording, because I want to reuse that structure for my own study note; open the page with the prompt and copy the exact template text. After that, go to 10015.io and use its bionic reading converter on this exact note text: “Latent growth models are statistical methods used to estimate change over time across individuals. They help researchers understand trajectories, differences in growth, and predictors of change.” I want the converted version in bionic reading style so it’s easier for me to scan, and please leave the converter result visible on the page as proof. Then finish by using Bing to find a free plagiarism checker that would work for a short note like this, open the actual tool page so I can verify it’s live, and tell me briefly how I’d paste in that same note and run an originality check before sharing it with classmates.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "easy"
+  }
+}

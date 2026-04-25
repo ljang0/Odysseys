@@ -1,0 +1,51 @@
+{
+  "id": "f23a062af7be0d5a28f1dcb1f06cc79a89dd04d6",
+  "snapshot": "chrome",
+  "instruction": "I’m helping a professor who works in natural language processing put together a serious funding list, and I want this to be something they can actually review in the browser afterward. Please start in CryptPad Sheets and create a spreadsheet called NLP Grant Opportunities so we have a clean place to track everything. Then use Google to search for active funding opportunities on official funder sites that are relevant to artificial intelligence, machine learning, computational linguistics, or NLP, focusing on opportunities that university faculty, professors, principal investigators, or academic researchers can apply for. As you find promising results, open the official opportunity page in its own tab, read enough of the page to confirm the call is still active and that academic applicants are eligible, and then record the program name, funding organization, research area or topic, award amount if the page lists one, application deadline, and the official link in the sheet. I need at least 20 distinct verified opportunities, and every row in the sheet should match an official grant page tab that stays open so I can visually review them one by one later. Once you’ve built the list, use the collected set to add a short summary in the sheet about what kinds of funders seem to support the most AI/NLP research—like federal agencies, foundations, nonprofits, or industry-backed research programs—and include your quick take on the strongest opportunities. Please leave the spreadsheet open at the end with the official grant tabs still open too.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 7,
+    "level": "hard"
+  }
+}

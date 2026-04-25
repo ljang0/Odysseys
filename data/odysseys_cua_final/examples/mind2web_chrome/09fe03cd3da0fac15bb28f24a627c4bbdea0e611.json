@@ -1,0 +1,51 @@
+{
+  "id": "09fe03cd3da0fac15bb28f24a627c4bbdea0e611",
+  "snapshot": "chrome",
+  "instruction": "I want help building a real family safety starter plan for my household, not just finding one generic tip. Please use public pages only and focus mostly on official or major nonprofit guidance for a U.S.-based family. Research exactly 6 safety categories: home fire escape, severe weather sheltering, emergency contacts and family reunification, first aid and poisoning, car-seat or child passenger safety, and basic emergency supplies. For each category, find and compare at least 2 credible guidance pages, note the most important points they clearly agree on, and call out any meaningful differences or gaps. Keep the strongest page for each of the 6 categories open in separate tabs so I can review them later, and also keep open 2 or 3 comparison tabs that were especially useful for resolving differences. After that, create one organized family safety plan with exactly 15 action items total, grouped into 3 buckets: do today, do this week, and do this month. Each action item should be specific enough that I could actually do it, and it should cite which category it came from. If a source leaves something unclear or not shown, say so instead of guessing. End with a short section naming the 6 pages you trust most and why those are the ones worth keeping open.",
+  "source": "https://redcap.usuhs.edu",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://redcap.usuhs.edu"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://redcap.usuhs.edu",
+    "reference_length": 29,
+    "level": "hard"
+  }
+}

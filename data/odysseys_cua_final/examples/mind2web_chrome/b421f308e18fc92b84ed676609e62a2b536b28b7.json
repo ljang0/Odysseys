@@ -1,0 +1,51 @@
+{
+  "id": "b421f308e18fc92b84ed676609e62a2b536b28b7",
+  "snapshot": "chrome",
+  "instruction": "I'm flying from Pittsburgh to a wedding in Palm Springs on the 3rd of next month and I need help putting together a full trip plan in the browser so I can actually see everything. Please start on Google Flights and search for round-trip flights from Pittsburgh to LAX, picking dates so I land at least 2 days before the wedding and get back to Pittsburgh by the 5th, and prioritize non-stop options if they exist — open the best result in its own tab so I can review it. Then do the same search but for Pittsburgh to Palm Springs International Airport (PSP) instead, because flying directly into Palm Springs might save me the drive entirely, and open that result in its own tab too so I can compare the two side by side. Once you've got both flight options, pull up Google Maps and check the drive time from LAX to Palm Springs, because I only want to drive between 9am and 4pm — so if the LAX flight lands too late to make that window, either adjust the flight date or find me a hotel near LAX on Booking.com for an overnight stay before driving, and leave the hotel page open so I can see the price and location. If PSP ends up being the better option and skips the drive issue entirely, flag that clearly. After that, search for car rental options at whichever airport makes more sense for the dates I'd need, and open at least one rental listing so I can see the vehicle type and daily rate. Then check whether I could squeeze in a stop at either Soban or Holbox on any of the drives between the airport and Palm Springs — look up both on Google Maps, see how far each detour would add, and recommend which one is actually worth it given the 9am–4pm driving constraint. Finally, open CryptPad and create a new document where you lay out the full day-by-day itinerary covering the chosen flights, the drive or lack thereof, hotel if needed, car rental, the wedding on the 3rd, and the recommended detour stop, and leave the CryptPad doc open so I can edit it later.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 8,
+    "level": "hard"
+  }
+}

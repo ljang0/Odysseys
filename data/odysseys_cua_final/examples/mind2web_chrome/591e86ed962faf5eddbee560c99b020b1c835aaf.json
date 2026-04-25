@@ -1,0 +1,51 @@
+{
+  "id": "591e86ed962faf5eddbee560c99b020b1c835aaf",
+  "snapshot": "chrome",
+  "instruction": "I’m organizing a 16-player golf day and I don’t just want a quick guess at the teams — I want you to use the browser to help me build a fair setup I could actually use. Please research reputable public golf sources to compare at least 6 different pages covering 4-person competition formats, handicap-allocation methods, and common scoring or tie-break rules for casual tournaments or outings. Focus on formats that could work cleanly for exactly four teams of four, and compare things like whether the format rewards low handicaps too heavily, how much handicap adjustment is usually recommended, and whether the scoring is simple enough for one-day recreational play. Then choose the single best format for this group and explain why it fits better than the alternatives. After that, use this exact player list to create exactly 4 teams of 4: Cody: 1, C: 3, Greg: 4, Johnny: 4, Dave: 4, Sal: 4, Lane: 5, Steve: 10, Christian: 11, Carl: 11, Rawley: 11, Gary: 13, Albert: 14, Eric: 16, Doric: 17, Marcus: 18. For the final team recommendation, show each team’s players, total handicap, average handicap, and handicap spread, and make the teams as balanced as practical for the chosen format. Also recommend one clear scoring method, one handicap allowance rule, and one tie-break procedure based on the public sources you found. Keep the most useful rules and format-comparison pages open in separate tabs — including the chosen format source and at least 2 credible alternative-format pages — so I can review the evidence afterward. After this, can you help me find a public golf course near Cleveland where this would be possible? Find 5 possible candidates, then open them up in separate tabs. When this is done, write up a CrpytoPad document with the teams and the possible golf course candidates, ranked by feasibility and quality.",
+  "source": "https://ww3.unipark.de",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://ww3.unipark.de"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://ww3.unipark.de",
+    "reference_length": 15,
+    "level": "hard"
+  }
+}

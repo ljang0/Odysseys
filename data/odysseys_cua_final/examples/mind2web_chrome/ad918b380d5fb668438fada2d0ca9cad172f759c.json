@@ -1,0 +1,51 @@
+{
+  "id": "ad918b380d5fb668438fada2d0ca9cad172f759c",
+  "snapshot": "chrome",
+  "instruction": "I’m planning a special-occasion future trip to New York City and I don’t want just three fancy hotel names — I want a real luxury-hotel decision I could actually book from. Start with Google Hotels or Google Travel and build me a comparison set of exactly 12 NYC luxury hotels that are clearly positioned at the top end of the market, ideally true 5-star properties when that’s shown. Use the same future 3-night stay window for all 12 so the prices are comparable, and record the nightly rate or average nightly rate shown there, plus any resort, destination, or mandatory fees if they’re publicly shown. Make sure the 12 hotels cover at least 4 distinct NYC luxury-stay areas such as Central Park South, Midtown/Fifth Avenue, Downtown/Tribeca/SoHo, and one other area if relevant. Then open the official property pages for the 8 strongest contenders and verify the core details that matter for an actual decision: room style and size cues if shown, standout amenities like spa/pool, dining on-site, view/location advantages, and cancellation flexibility if publicly listed. For those 8 contenders, also use maps and photos to sanity-check what the surrounding area feels like and how convenient each one is for a luxury leisure trip. After that, narrow the list to a final 6-hotel shortlist and give me a structured recommendation: best overall luxury stay, best classic NYC splurge, best quieter or more private option, and best value-for-luxury among the finalists. Please keep the most useful tabs open at the end: the Google hotel results page for the search, the official pages for the final 6 hotels, and at least 2 map or photo views that help show the neighborhood tradeoffs.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

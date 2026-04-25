@@ -1,0 +1,51 @@
+{
+  "id": "4d033a71318c5a2869b0f7132b0bae578bb75876",
+  "snapshot": "chrome",
+  "instruction": "I want to figure out which core exercises are actually worth adding to a powerlifting routine, not just get a quick summary of one Reddit thread. Start by searching Reddit and open at least 8 substantial public discussion threads from places like r/Fitness, r/powerlifting, or similar lifting communities that talk about ab or core work for squat, bench, and deadlift carryover. From those threads, pull the exercises that come up repeatedly and note the main reason people recommend each one, like bracing strength, anti-extension, anti-rotation, direct ab hypertrophy, or lower-back stability. Then sanity-check those Reddit favorites against at least 5 credible public coaching or exercise-technique sources, and open demo pages or videos for the most commonly mentioned movements so it’s clear what each exercise actually is. Build me one organized final recommendation memo with at least 12 distinct exercises total, grouped by purpose, and for each one include a short note on why lifters use it, what equipment it needs, whether it seems better for beginners or more advanced lifters, and whether it looks like a high-confidence pick, mixed-opinion pick, or probably overrated pick based on the sources you reviewed. Also make a final shortlist of exactly 6 exercises I could realistically rotate into a powerlifting accessory setup: 2 bodyweight-only options, 2 gym-machine-or-cable options, and 2 heavily loaded options. Keep the most useful Reddit threads, at least 2 coaching-source tabs, and at least 2 exercise demo tabs open at the end so I can review the evidence myself. Write up this information in CryptoPad Documents for a comprehensive workout guide and plan.",
+  "source": "https://www.reddit.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.reddit.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.reddit.com",
+    "reference_length": 6,
+    "level": "hard"
+  }
+}

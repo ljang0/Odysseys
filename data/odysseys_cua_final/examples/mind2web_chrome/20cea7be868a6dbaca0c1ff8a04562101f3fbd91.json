@@ -1,0 +1,51 @@
+{
+  "id": "20cea7be868a6dbaca0c1ff8a04562101f3fbd91",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to figure out which electric-vehicle websites are actually worth following for the next few months, not just find one random EV site. Please do a serious browser-based comparison of 10 EV-focused public websites that cover the space in meaningfully different ways—news, car reviews, buying guides, charging and ownership advice, future model coverage, or broader EV analysis. Start from one clearly EV-focused site and expand naturally to other credible EV-focused sites you find on the public web. For each of the 10 sites, check the homepage plus at least one deeper article or section page so you can verify what it really specializes in, how current it seems, and whether it is more useful for shoppers, enthusiasts, or industry-followers. Compare them on concrete things I’d care about: what kind of EV coverage they emphasize, whether they seem actively updated, whether they cover both current models and upcoming EVs, whether they have practical charging or ownership information, and whether the site feels easy to use for ongoing research. Then recommend exactly 5 sites to keep in my regular EV-reading rotation, with a short reason for each, and identify the single best site for each of these three use cases: keeping up with EV news, researching a future EV purchase, and learning about charging/ownership. Keep the 5 recommended sites open in tabs at the end, and for at least 3 of those, also leave one representative deeper page open that shows why the site made the cut. If any field is unclear from public pages, say not shown rather than guessing.",
+  "source": "https://insideevs.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://insideevs.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://insideevs.com",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

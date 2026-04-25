@@ -1,0 +1,51 @@
+{
+  "id": "cbe12703e129832feb5e7b56c4141476fb423338",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to put together a compact entertainment lineup for this week that gives me a nice mix of short narrative games, a few more action-heavy palate cleansers, some quick browser-game breaks, and one cozy book. Please start on Reddit and look through real recommendation threads for at least five story-heavy games that people describe as short or easy to finish, because that’ll set the mood I’m aiming for; open the most useful Reddit threads in separate tabs and leave at least one of the key threads open so I can glance at the discussion myself. Then, still using Reddit and that same taste baseline, find at least three FPS shooters that people recommend as good contrast after emotional or story-driven games, so I can see what might work as a reset between heavier experiences. After that, go to Poki and find three mind-challenging browser games I could dip into between the bigger titles, and open each game’s actual Poki page in its own tab so I can visually confirm they’re the right kind of quick break. Finally, head to Goodreads and pull up the page for The Very Secret Society of Irregular Witches, read at least three user reviews, and give me the main takeaways from those reviews with an eye toward whether it matches the cozy, character-driven vibe from the first Reddit step; leave the Goodreads book page open too so I can look at the rating and cover. In the end, give me one concise recommendation bundle with the game and book titles, links where they make sense, and a short note on how each FPS pick, each Poki game, and the book complement the story-heavy shortlist you found first.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "medium"
+  }
+}

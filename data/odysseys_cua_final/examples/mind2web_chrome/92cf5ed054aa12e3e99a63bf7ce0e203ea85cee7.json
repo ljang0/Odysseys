@@ -1,0 +1,51 @@
+{
+  "id": "92cf5ed054aa12e3e99a63bf7ce0e203ea85cee7",
+  "snapshot": "chrome",
+  "instruction": "Help me open the Stanford CS231N introduction lecture on YouTube and start playing it. Create a list of 3 of the datasets they mention in the lecture (with relevant timestamps for each), and then help me find a way to download these 3 datasets. Go to the source and pull up the tab with the download link for all three datasets. Keep all relevant dataset links open in multiple tabs and provide a summary of them.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 3,
+    "level": "medium"
+  }
+}

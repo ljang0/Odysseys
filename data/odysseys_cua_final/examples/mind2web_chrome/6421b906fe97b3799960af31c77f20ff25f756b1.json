@@ -1,0 +1,51 @@
+{
+  "id": "6421b906fe97b3799960af31c77f20ff25f756b1",
+  "snapshot": "chrome",
+  "instruction": "I’m putting together a quick graduate outreach brief for a student in San Diego and want a few very specific examples from different kinds of schools and programs. Please start on Lewis & Clark’s admissions site and find the admissions representative who covers San Diego, California, then open that actual regional contact page and capture the rep’s name, email, phone, and anything else listed, and leave the page open so I can visually confirm how they assign territories. Then go to Hunter College Silberman’s site and find the Fall 2026 application deadline for the MSW program, making sure you’re on the real admissions or application page where the date is shown. After that, use Indiana University Kokomo’s graduate programs page to list all of the graduate programs they show there, and keep that page open in its own tab so I can compare the breadth of options at a smaller campus. Since the student is especially interested in California opportunities, go to the UCSF clinical trials site and find at least two glioblastoma trials in Northern California that are currently recruiting, then open the actual trial pages in separate tabs so you can give me each trial’s recruiting status and study location and I can see that they’re still live. For a student-life example, use Google to get to the official Oral Roberts University page that identifies the student activities director, and pull the person’s name plus email and phone if available, making sure it comes from an ORU page rather than a directory aggregator. Finally, use Google to find the official EDF Energy graduate programme page that mentions whether new hires get salary reviews, and quote the exact wording from the page if it’s there. Please give me everything back as a compact sourced summary, but keep the key pages open in tabs so I can glance at the evidence.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 7,
+    "level": "medium"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "7959caf1580d130cedcba72e8f21ab0e9408ba91",
+  "snapshot": "chrome",
+  "instruction": "I'm trying to piece together a really cheap Barcelona city break for 2 adults for 30th of next month to the 1st of the following month, and I want a few comparison points so I can sanity-check the budget. First, on Booking.com, search Barcelona for those dates and find me one hotel that's within 3 miles of the city centre and comes in under £120 total, then open the actual property page so you can grab the exact hotel name, total price, and the location details shown there, and leave that tab open so I can look at it later. Once you have that as my lodging benchmark, go to AirBnB and check the all-listings page to see how many accommodations are currently available there, just so I can compare a small apartment's availability with the Barcelona hotel market. After that, open a new house listing on Rightmove and note the asking price and number of bedrooms from the listing page itself, because I want a quick reality check on what short-stay costs look like next to property prices elsewhere; keep that listing open too so I can see the photos and details. Finally, use the Barcelona hotel price you found to work out the nightly rate, take half of that, and then on Hertz look near Barcelona for a Honda with great ratings during the duration of my trip, and tell me if any option also comes in under $100 per day; open the best matching car listing in its own tab and use it to clearly say whether the car's daily cost is more than half of the hotel's nightly rate. Please give me a short trip-planning summary with the Barcelona hotel first, then the AirBnB availability count, then the Rightmove price check, and end with the hotel-versus-car comparison stated plainly.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 6,
+    "level": "medium"
+  }
+}

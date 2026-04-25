@@ -1,0 +1,51 @@
+{
+  "id": "42e2344431639ea57815c2c6b42b047cc7814176",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to figure out whether Nike Phantom low-top soccer cleats are actually a smart budget choice for ultimate frisbee, not just whether one listing happens to be cheap on one site. Please start with the Nike Phantom 6 Club FG/MG low-top men’s model and verify its current price on the source retailer plus at least 2 other public retailer or brand pages if available, noting any visible sale pricing and whether common men’s sizes are shown or marked not shown. Then build me a serious comparison against 7 other realistic cleat options that someone might actually wear for ultimate frisbee, for 8 total models altogether, with at least 3 brands represented and at least 4 models priced under about $80 if you can find them. For each model, check public product pages and capture the current listed price, surface or stud description, whether it looks better suited to firm ground, multi-ground, turf, or not clearly stated, whether it is low-top or mid/high-top if shown, weight if shown, and return policy basics from the seller or brand page if easy to verify, otherwise mark not shown. I also want you to spend time on the real-frisbee-use question: look at at least 4 public pages from ultimate frisbee communities, reviews, guides, or discussion threads about what people actually prefer in cleats, especially around soccer versus football/lacrosse cleats, traction, toe shape, and comfort for cutting, and use that to explain whether the Phantom-style option seems like a good fit or a compromise. Keep the browser evidence visible as you work: leave open the Nike Phantom product page, the 3 strongest alternative product pages, and 2 of the most useful ultimate-frisbee advice pages. At the end, give me one organized decision memo with all 8 models, the verified price range you found, which ones seem best for strict budget, best overall value, and best specifically if I want something close to the Nike Phantom feel, and tell me clearly whether buying the Nike Phantom is actually the right move for ultimate frisbee or whether I should get something else instead.",
+  "source": "https://www.als.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.als.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.als.com",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

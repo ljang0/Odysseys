@@ -1,0 +1,51 @@
+{
+  "id": "f979f723a3f6f65ea8d75903425f22c67505daf1",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to put together a Christmas gift built around Pokémon cards, but I want a realistic backup plan in case the main item is sold out. Please start on Collector Store and look up the Pokémon Phantasmal Flames Booster Elite Trainer Box, then open the actual product page and check whether it says it’s in stock or sold out, and note the listed price so I know if the original idea is still viable. After that, go to Best Buy and search for Pokémon trading cards or Pokémon card gift items and pick one gift option that looks like a reasonable substitute, making sure to open the product page so I can see the listing myself and leaving that tab open as a reference. Then use that same general idea on Walgreens by searching for Pokémon trading cards and finding two available options with prices, opening each Walgreens product in its own tab so I can compare them side by side and verify they’re actually live listings. In the end, give me a short backup-plan summary with the Collector Store stock status and price, the Best Buy product name and price, and the two Walgreens options with their prices.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "easy"
+  }
+}

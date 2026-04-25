@@ -1,0 +1,51 @@
+{
+  "id": "08b3ee12dd124bd3f046bd568260110899dc8695",
+  "snapshot": "chrome",
+  "instruction": "I’m considering making a meaningful donation or sponsorship to one specific nonprofit, but before I do that I want a real browser-based due-diligence review rather than just a quick IRS check. Start by finding the organization on the IRS Tax Exempt Organization Search and confirm its exact legal name, EIN if shown, deductibility and tax-exempt status, and whether anything looks inactive, revoked, or unusual. Then verify the same organization on the most relevant public state charity-registration or business-record pages you can find, and note whether it appears properly registered or if any key fields are not shown. After that, pull the most recent publicly available Form 990 or equivalent filing you can access and summarize a few concrete basics I’d care about as a donor, like recent revenue, expenses, leadership compensation if shown, and whether the filing looks current. Next, review the nonprofit’s own public website for mission clarity, leadership or board transparency, annual reports, impact claims, and contact information, and open a few of the strongest evidence pages so I can inspect them later. Then check at least 3 independent public sources such as nonprofit watchdog, charity database, or major public-profile pages to see whether they agree on status, scale, and credibility, and note any material discrepancies. Finally, compare this organization against exactly 4 similar nonprofits working in the same cause area, using public pages only, so I can see whether this is the strongest option or just one plausible option. Give me a final recommendation on whether I should feel comfortable supporting this nonprofit now, support one of the alternatives instead, or hold off pending more information, and keep the most useful registry, filing, watchdog, and comparison tabs open at the end.",
+  "source": "https://apps.irs.gov",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://apps.irs.gov"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://apps.irs.gov",
+    "reference_length": 3,
+    "level": "hard"
+  }
+}

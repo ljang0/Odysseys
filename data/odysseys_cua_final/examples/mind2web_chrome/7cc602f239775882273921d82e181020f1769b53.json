@@ -1,0 +1,51 @@
+{
+  "id": "7cc602f239775882273921d82e181020f1769b53",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to put together a simple evening-event outfit that I can actually order in the U.S., so could you start on Theory and find me one green dress that looks dressy enough for an evening plan and is available for U.S. delivery, then open the actual product page so I can see the photos and note the product name and price? Once you’ve got that dress, use the color and overall vibe as your reference point and go to a shoe site to find a matching pair of women’s shoes in size 9.5 that would work for the same outfit, and open that product in its own tab too so I can compare the two pages side by side; please note the shoe name and price. After that, check ooShirts because I may also need a simple custom group shirt order for the event, and confirm whether they offer no-minimum print-on-demand orders shipped within the United States, including whatever turnaround or shipping timing they state on the site. At the end, give me one concise summary with the Theory dress details, the matching shoes details, and the ooShirts no-minimum plus shipping/timing answer, and leave the dress and shoe product pages open for me.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "easy"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "2dab64ba576aeaa10453c0c642792f5ac71fb646",
+  "snapshot": "chrome",
+  "instruction": "I’m thinking about a future long weekend in Colorado Springs and I don’t just want a quick list of three ideas — I want to know whether the city actually has enough variety to build a fun, realistic plan. Please start with Springs magazine or similar local-guide coverage to discover what’s happening and what people recommend, then build me a Colorado Springs weekend playbook using only public pages. I want at least 12 total options, with exactly 3 free or very low-cost activities/resources, exactly 3 food or drink stops, exactly 3 outdoor options, and exactly 3 current or recurring local events, seasonal attractions, or neighborhood-specific things to do. For each option, verify it on an official or primary public page when possible and note the title, what category it fits, the neighborhood or area, price if shown, hours or timing if shown, and whether advance booking seems needed or not shown. Open and keep the most useful evidence tabs available as you go, including at least 2 local-guide pages, at least 4 official venue or organizer pages, and at least 3 map-based pages so I can sanity-check location clusters. After that, compare the 12 options and turn them into 2 different weekend plans: one budget-friendly plan and one more experience-focused plan, with each plan covering Friday evening, Saturday daytime, Saturday evening, and Sunday daytime. Make the plans geographically sensible instead of bouncing all over town, and mention where there are obvious backups if something appears closed or weather-dependent. Finish with a clear recommendation on whether Colorado Springs looks like a strong choice for that kind of weekend, plus the 5 strongest pages left open for me to review. Can you also make sure to plan out the dining itinerary for the weekend under these guidelines? Find high quality, can't miss restaurants for every meal of the trip and write them in CryptoPad Spreadsheet.",
+  "source": "https://springsmag.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://springsmag.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://springsmag.com",
+    "reference_length": 28,
+    "level": "hard"
+  }
+}

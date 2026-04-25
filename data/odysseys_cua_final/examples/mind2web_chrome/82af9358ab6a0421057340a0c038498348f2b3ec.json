@@ -1,0 +1,51 @@
+{
+  "id": "82af9358ab6a0421057340a0c038498348f2b3ec",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to get a handle on my UK telecom budget and want a real-world baseline I can actually look at in the browser. Please start on MoneySavingExpert’s Cheap Mobile Finder and set it to SIM-only deals with unlimited minutes, unlimited texts, and at least 10GB of data, then sort out the three cheapest options you can see in ascending monthly price order and note the provider, monthly price, contract length, and data allowance for each so I can compare what the low end of the market looks like. Once you’ve got that shortlist, open Vodafone UK in another tab and figure out what the “Xtra 40” part of one of their broadband plan names actually means, because I want to know whether that’s describing the broadband speed tier or some extra bundle feature; please leave the relevant Vodafone page open so I can see the wording myself. After that, go to PrintPigeon and find the service where I could upload a PDF and have it printed and mailed as a letter, and tell me the service name, the starting price, and the exact order page where the process begins so I could send myself a one-page note with the SIM comparison and the Vodafone explanation. If possible, keep the MoneySavingExpert results tab and the PrintPigeon order page open in separate tabs so I can visually compare them afterward.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 6,
+    "level": "easy"
+  }
+}

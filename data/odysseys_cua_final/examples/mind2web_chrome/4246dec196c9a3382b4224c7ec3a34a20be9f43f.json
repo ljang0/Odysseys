@@ -1,0 +1,51 @@
+{
+  "id": "4246dec196c9a3382b4224c7ec3a34a20be9f43f",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to put together a budget-friendly iPad Air M3 bundle without overpaying, so could you start on Target and look through the actual iPad Air M3 product pages to see which listed configuration is cheapest right now, including any sale price or visible discount text, and leave the cheapest product page open so I can look at the photos and storage/color details myself. Once you know which Target deal is the lowest, use that as the anchor for the bundle and go to Best Buy to find an Apple Magic Keyboard listing for the iPad Pro 13-inch that’s specifically open-box or refurbished and in Good condition, because I want a lower-cost keyboard option for a large Apple tablet setup; open that listing in its own tab so I can compare it side by side with the iPad. After that, check Amazon for a protective case for the iPad Air M3 that explicitly says it supports portrait-mode stand positioning, and open the actual product page so you can quote the wording that proves portrait support and I can verify the listing details on screen. To round things out, hop over to Slickdeals and see what the current featured top deal for iPads is, then tell me the deal title and price so I can decide whether it makes more sense to buy this bundle now or wait for a broader tech bargain. In the end, give me a short bundle summary anchored on the cheapest Target iPad Air M3 you found, with the keyboard, the portrait-capable case, and the Slickdeals iPad deal.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "easy"
+  }
+}

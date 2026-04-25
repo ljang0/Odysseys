@@ -1,0 +1,51 @@
+{
+  "id": "54fdb6126b926e2a48b4e45ffc1fe303e873eb7f",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to figure out what kind of genuinely fun, alternative adult outing I should plan in London for a future weekend, and I don’t want just three random ideas. Please do a real browser-based comparison of 12 to 15 London experiences that skew unusual or playful for adults, with at least 4 immersive game/story-led options, at least 4 challenge or escape-style activities, and at least 4 social or competitive experiences that still feel more interesting than a normal bar night. Use official venue pages plus maps/review pages where helpful, and for each option note the name, borough or area, the core format, typical duration, indicative price per person if public, ideal group size if shown, and anything important about booking or age restrictions; if something is missing, write \"not shown.\" As you work, keep the strongest candidate tabs open so I can inspect them later, and for at least 6 of the best options open pages with photos, maps, or reviews so there’s visible evidence of what the experience is really like and where it sits in the city. Then narrow the list to the best 6 overall and compare them more carefully for vibe, value, logistical ease, and how distinctive they feel versus touristy or generic options. Finally, recommend exactly 3 winners: one best immersive game, one best escape/challenge activity, and one best overall alternative night-out pick. Also build 2 realistic sample plans from your shortlist: one for a date night and one for a group of 4 to 6 friends, each centered on one main experience plus a nearby food or drink spot that makes geographic sense. Leave the most useful venue and map/review tabs open at the end so I can review the finalists.",
+  "source": "https://www.inthehiddencity.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.inthehiddencity.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.inthehiddencity.com",
+    "reference_length": 14,
+    "level": "hard"
+  }
+}

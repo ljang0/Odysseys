@@ -1,0 +1,51 @@
+{
+  "id": "24705fdf2d165f4f844984e62b4511396a88206d",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to figure out whether I can realistically handle a failing instrument cluster on my 2012 Mercedes GLK350 myself or whether I should pay a shop, so please do a serious browser-based repair-prep session instead of just summarizing one video. Start by finding and comparing at least 7 public sources on the actual cluster-removal process for this exact model or the closest clearly compatible X204/GLK fit, including at least 2 videos, at least 2 forum or owner-discussion threads, at least 1 parts diagram or exploded-view page, and at least 1 written guide or listing that helps confirm how the cluster is mounted. From those sources, build one consolidated step-by-step removal and reinstall explanation that calls out the tool sizes or trim tools when shown, battery or airbag-related precautions if mentioned, hidden clips or fasteners, and any disagreements between sources. Then research replacement paths on public pages by comparing at least 5 cluster options total across used, rebuilt, and OEM-or-OE-style listings, and note the part number when shown, fitment notes, price, mileage disclosure if applicable, warranty or return details if shown, and whether the listing or surrounding sources suggest coding, VIN matching, immobilizer issues, or odometer problems. After that, look for at least 3 public repair-shop or cluster-rebuild pages that could serve as a professional fallback, and capture what each one publicly shows about Mercedes cluster service, turnaround, pricing guidance if shown, or contact limitations if pricing is not shown. Keep the most useful evidence tabs open for the best removal video, the clearest forum thread, one parts-diagram page, the 3 strongest replacement listings, and the 2 most credible professional-service pages. Finish with a practical decision memo that tells me whether the evidence supports DIY removal only, full DIY replacement, or using a pro, and include a concise risk checklist, a shopping shortlist of the best 3 replacement options, and a final recommendation based only on what the public pages actually support.",
+  "source": "https://www.youtube.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.youtube.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.youtube.com",
+    "reference_length": 5,
+    "level": "hard"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "47b251d71185920165b7645139ead965cd47441a",
+  "snapshot": "chrome",
+  "instruction": "I'm seriously thinking about boarding school for my child for high school, and I want a solid college-prep shortlist I can actually look through myself afterward. Please start on Google and use credible ranking or review sources to identify about 15 to 20 of the strongest U.S. boarding schools with strong academic reputations, then for each school open the actual admissions page in its own tab so I can compare them side by side. As you go, please make sure each school really does offer boarding and is clearly a college-preparatory high school, not just a day school or a specialty program. Then create a CryptPad Sheets spreadsheet called Top Boarding Schools and log each verified school with the school name, city and state, annual boarding tuition or total boarding cost, application deadline if the admissions site lists one, and the direct admissions page link. I also want browser-proof here, so please leave every admissions tab open for the schools you include, and if a tuition or deadline is buried on a separate tuition or apply page, open that page long enough to verify it before recording the number and then keep the admissions tab available. Once the sheet is filled out with around 15 to 20 strong options, add a short summary in the sheet or a companion CryptPad Document about the typical tuition range and where these schools are concentrated geographically, and finish with a brief recommendation note about the most compelling options so I have a practical starting point.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 7,
+    "level": "hard"
+  }
+}

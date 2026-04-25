@@ -1,0 +1,51 @@
+{
+  "id": "ea8661bcf1150ea65b11aa0f2041cd4b1047d90f",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to build a serious law school research sheet for myself, and I want to base it on a major ranking rather than random lists. Please start on U.S. News and use its law school rankings to pull the top 20 U.S. law schools, including each school’s city and state, so I have a clean shortlist to work from. Then, for each of those 20 schools, go to the school’s official law school website and open the JD admissions page in its own tab so I can visually compare the official pages later. On each admissions page, verify the current JD application deadline, whether they accept the LSAT, GRE, or both for JD applicants, and the application fee if it’s listed on the admissions or application requirements pages. After that, stay on the official school sites and look for at least one real funding opportunity per school when possible—things like merit scholarships, named scholar programs, public interest fellowships, or other law student funding—so that we end up with at least 20 official funding opportunities total across the 20 schools. When you find one, open the actual program page in a new tab and verify the eligibility requirements and the funding amount or benefit if the school gives one, because I want this based only on official pages I could click through myself. Once you’ve gathered everything, create a CryptPad Sheets spreadsheet titled Top Law Schools and Fellowships and enter one row for each school with the school name, location, application deadline, LSAT/GRE policy, application fee, and the official admissions link. Then add the funding opportunities in the same sheet or a clearly labeled second tab with the school name, scholarship or fellowship name, eligibility criteria, funding amount or benefit if listed, and the official program link. Please leave the key admissions tabs and several of the funding tabs open so I can spot-check them in the browser, and finish with a short written summary in the sheet or an adjacent CryptPad Document explaining which schools seem to offer the most generous funding and whether the programs you found lean more toward public interest, leadership, or academic excellence.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 10,
+    "level": "hard"
+  }
+}

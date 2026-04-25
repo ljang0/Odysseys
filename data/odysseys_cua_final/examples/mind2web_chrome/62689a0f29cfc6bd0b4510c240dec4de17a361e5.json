@@ -1,0 +1,51 @@
+{
+  "id": "62689a0f29cfc6bd0b4510c240dec4de17a361e5",
+  "snapshot": "chrome",
+  "instruction": "I want to send a friend a quick little roundup that mixes pop-culture, memes, and actual news, so could you start on Reddit and find a discussion thread about Coraline, open the actual thread page, and grab the exact thread title for me because I want the wording to be precise. While you’re still on Reddit, go over to r/starterpacks and pick two recent meme-style posts that feel funny enough to sit next to the Coraline item, and open each of those posts in its own tab so I can compare them later and make sure they’re really the kind of starterpack jokes I’d send to someone. Then switch to CNN and find the latest breaking news story about Iran, open the article itself, and note the exact headline plus the publication time so I can include one current-events item that’s clearly sourced. In the end, give me a short, friend-ready update that includes the Coraline thread title, the two r/starterpacks post titles, the CNN Iran headline with its publication time, and a natural sounding summary of these.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "easy"
+  }
+}

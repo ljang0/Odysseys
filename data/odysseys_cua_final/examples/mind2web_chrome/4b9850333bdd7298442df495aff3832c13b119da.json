@@ -1,0 +1,51 @@
+{
+  "id": "4b9850333bdd7298442df495aff3832c13b119da",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to put together a cozy monthly subscription night for a friend in the UK and want one tidy recommendation I can actually look at in the browser afterward. Please start on Beer52 and figure out which of their beer subscription plans are genuine monthly options that deliver within the UK, because I only want plans that would work for a regular monthly treat here rather than anything one-off or unclear. Open the relevant Beer52 plan pages in separate tabs and leave the best evidence visible so I can compare them myself. Once you know the monthly beer choices, go to snackd.co.uk and find at least three snack subscription boxes that also deliver to the UK, then open each actual product or brand page so you can verify from the site itself that UK delivery or shipping is available and leave those tabs open too, since I want to see the boxes and not just a summary. After that, use Google to work out which UK streaming subscription service includes the movie “Wicked” at no extra cost in the base subscription, and please make sure it’s not just a rental, purchase option, add-on channel, or ad-supported loophole because I want something I could actually pair with the subscription night without paying extra for the film. Open the page that proves where it’s included and keep that tab available. Finally, check PrintPigeon and explain, in plain English, how it takes an email or online message and turns it into a posted letter, and tell me the current price for sending one standard UK letter so I can decide whether mailing the invite is worth the extra effort. In the end, give me one coherent summary that pulls together the Beer52 monthly UK options, the three snack alternatives with UK-delivery proof, the streaming service for “Wicked,” and the PrintPigeon explanation and letter price.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 5,
+    "level": "medium"
+  }
+}

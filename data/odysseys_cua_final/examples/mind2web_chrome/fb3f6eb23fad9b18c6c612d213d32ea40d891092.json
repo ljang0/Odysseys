@@ -1,0 +1,51 @@
+{
+  "id": "fb3f6eb23fad9b18c6c612d213d32ea40d891092",
+  "snapshot": "chrome",
+  "instruction": "I’m thinking about signing up for a couple of online research-study platforms, but before I hand over my info I want a practical sense of what the participant experience is actually like. Please start on Google and look up Respondent.io, then open the actual Respondent site and any clearly relevant public help or participant pages so you can tell me, in plain English, how it works for participants — especially how someone signs up, builds a profile, finds or qualifies for studies, and how payment is handled. Keep the most useful Respondent page open so I can glance at it later. Then go to Terac’s site and figure out how that platform works for participants too, with extra attention to how someone gets set up to take part in studies, because I want to compare whether Terac’s onboarding feels simpler or more involved than Respondent’s. If you find a page that explains joining or participation, leave that open in its own tab as proof. After that, switch over to SurveyMonkey and open the screener page and verify it loads with visible survey questions so I can see what an actual participant flow feels like end to end, and leave that final page visible. When you’re done, give me a short comparison of Respondent versus Terac, say clearly whether Terac seems easier or more involved to get started with, and confirm that the SurveyMonkey screener page loaded with visible survey questions.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "easy"
+  }
+}

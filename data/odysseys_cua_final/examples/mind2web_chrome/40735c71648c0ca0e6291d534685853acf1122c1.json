@@ -1,0 +1,51 @@
+{
+  "id": "40735c71648c0ca0e6291d534685853acf1122c1",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to map out a summer concert run and I’d love your help doing it in a real browser so I can actually look at the pages afterward. Please use Google to find the official tour or ticket pages for Zedd, Bad Bunny, and TWICE, and for each artist open the real official tour page in its own tab and pull out every U.S. show happening during the summer months, with the city, venue, date, and the actual ticket or event link. I want at least 10 total concert options across the three artists, and I’d like them organized in a CryptPad Sheets spreadsheet titled Summer Concert Plan so I can compare everything in one place. Once you’ve got the concert list, look across the dates and figure out a realistic sequence where I could attend at least one show from each artist in the same summer without impossible timing. Then use Google Flights to check real flight options for each leg of that route, making sure the dates and airports line up with the concert schedule, and open the flight results you used in tabs so I can review them. After that, use Booking.com to find a hotel in each concert city for the nights I’d need, and open the actual hotel listing pages so I can see the photos, prices, and location. Then use Google Maps or Google Search to find a couple of food options near each venue or hotel, because I want this to feel like a full trip and not just a list of shows. Please finish the spreadsheet with the concert options plus the chosen three-concert itinerary, including the verified flights, hotels, and food picks, and keep the official artist pages and the key booking tabs open so I can compare everything visually.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 12,
+    "level": "hard"
+  }
+}

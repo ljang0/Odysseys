@@ -1,0 +1,51 @@
+{
+  "id": "38039bd8d8469c245faab531cb508c3c975c4869",
+  "snapshot": "chrome",
+  "instruction": "I’m putting together a simple hummingbird-themed flyer draft and want you to help me gather a few references in a practical order so I can actually see what might work together on screen. First, on Google Images, search for a photo of a hummingbird flying among flowers in a sunlit garden and open the actual image result that feels strongest as the main visual reference, then keep that image page open in its own tab and save the image result URL for me. Once you have that nature image as a reference point, go to Canva’s Templates page, search for flyer templates, and pick two template names that would suit a bright, colorful garden-style hummingbird flyer; please open each template in a separate tab too so I can compare the layouts visually later. After that, use Google to find a simple CSS example for styling an HTML unordered list with ul and li selectors, including an example that changes the bullet style with list-style-type, because I may turn the flyer details into a small webpage and want a clean bulleted section style. Finally, go to Purdue OWL and find the APA guidance for citing a PowerPoint presentation so I know how to credit it properly if I turn this flyer concept into slides. At the end, send me the hummingbird image result URL, the two Canva template names, the CSS example you found, and a concise summary of the Purdue OWL APA citation guidance, and leave the image tab plus the two Canva template tabs open so I can look at them.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 4,
+    "level": "easy"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "d3250da48cc778a40d11683a56fdfca962d6fe19",
+  "snapshot": "chrome",
+  "instruction": "I’m putting together a coordinated holiday gift bundle for one family and want it to feel like everything belongs together instead of looking random. On Kohl’s, please find two gift ideas for siblings that stay under $25 each and are actually available for pickup in store today as a backup to shipping — one that would make sense for a 12-year-old girl and one for an 11-year-old boy — and open each product in its own tab so I can compare the vibe and price side by side. Once you’ve got those, go to Etsy and open a personalized family Christmas ornament listing that looks giftable, then tell me the shop name and exactly what customization choices the listing offers, because I’d like to add something with the family name and need to know what I can personalize. After that, use Target to find a shatterproof gold-and-white ornament set that visually matches the personalized ornament and would work as filler in the bundle, and open the actual product page so I can see the photos and any color or finish options shown. Then head to Walmart and browse for two boys outfit gift options for a younger boy, and pick the one that best matches the overall style and price level of the other gifts so the bundle feels consistent; please keep the better outfit page open for me. Finally, use Google to find one highly rated hot buttered rum recipe from a recognizable recipe site, open the actual recipe page, and give me the recipe name, source, ingredient list, and basic preparation steps so I can include a cozy holiday extra with the package idea. At the end, send me a concise summary with all the selected items, prices, pickup-today details for Kohl’s, the Etsy customization options, the Target ornament details, the two Walmart outfit options with your preferred pick, and the recipe source and steps.",
+  "source": "https://www.google.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.google.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.google.com",
+    "reference_length": 6,
+    "level": "medium"
+  }
+}

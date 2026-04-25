@@ -1,0 +1,51 @@
+{
+  "id": "b6bbdc8e0388a5a1e256f561a8f0b7d92c6e772c",
+  "snapshot": "chrome",
+  "instruction": "I want to make one genuinely good winter purchase instead of impulse-buying the first heated blanket I see. Please do a serious browser comparison of 12 current electric heated blanket options across major public retailer pages and manufacturer pages where available, focusing on products that are realistically usable for bed warmth in winter in the U.S. Include a mix of at least 4 full-size bed blankets, at least 4 throws, and at least 4 larger or premium options for shared use or colder sleepers. For each option, record the product name, retailer, current listed price, size, material, number of heat settings, auto shutoff details, machine-washability, controller style, safety certification or compliance language if shown, warranty length if shown, and shipping or delivery info if it is prominently visible; use 'not shown' when a field is missing. Open the actual listing pages for all candidates, and for at least 6 of them also open either the manufacturer product page, care/manual page, or another public page that helps verify the safety or care details, so the comparison is not based on retailer copy alone. While comparing, look through photos and review sections closely enough to capture recurring positives and negatives for each product, especially anything about uneven heating, reliability, shedding, thinness, controller annoyance, or washing problems. Then narrow the 12 down to a final shortlist of 5 with a clear recommendation for best overall, best value, best throw, best for couples or larger beds, and best premium pick. End with one concise buying memo that explains which single blanket I should buy and why, and keep the 5 finalist product tabs plus the 2 most useful verification tabs open so I can review them.",
+  "source": "https://www.amazon.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.amazon.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.amazon.com",
+    "reference_length": 4,
+    "level": "hard"
+  }
+}

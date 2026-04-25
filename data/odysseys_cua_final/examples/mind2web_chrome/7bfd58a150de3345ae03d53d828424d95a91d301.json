@@ -1,0 +1,51 @@
+{
+  "id": "7bfd58a150de3345ae03d53d828424d95a91d301",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to figure out whether Netflix alone can carry a really good mystery-TV run for me over the next few months, not just hand me a random list of 5 shows. Please start on Netflix and identify at least 20 mystery series that are actually available there, using Netflix’s browse/search/title pages as the backbone of the sweep. Then compare them on the public web so I can make a real decision: for each title, capture the basic hook, whether it’s more detective / crime mystery / thriller / supernatural mystery / puzzle-box, whether it looks finished or still ongoing if that is publicly shown, and the rough viewing commitment in episodes or seasons when available. I also want quality and fit, so cross-check each title with public review or metadata pages and note an IMDb score, a Rotten Tomatoes score, or ‘not shown’ if one of those isn’t available. From that larger pool, narrow it to exactly 10 strongest options for me, making sure the final 10 are not all the same kind of mystery and include at least 2 non-English series if Netflix has enough good candidates. For those final 10, open and keep the key evidence tabs available so I can inspect them later: keep the Netflix title pages open for the final 10, plus at least 5 outside pages that were especially useful for comparing reception or episode counts. End with a clear ranked watchlist from 1 to 10 that tells me which series to start with first, which ones are best if I want something short and high-quality, which ones are best for a long binge, and whether Netflix’s mystery lineup actually looks deep enough that I would not need another streaming service right now.",
+  "source": "https://www.netflix.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.netflix.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.netflix.com",
+    "reference_length": 6,
+    "level": "hard"
+  }
+}

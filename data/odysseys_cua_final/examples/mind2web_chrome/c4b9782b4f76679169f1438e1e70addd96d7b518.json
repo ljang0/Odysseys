@@ -1,0 +1,51 @@
+{
+  "id": "c4b9782b4f76679169f1438e1e70addd96d7b518",
+  "snapshot": "chrome",
+  "instruction": "I’m trying to find a pair of women’s bootcut jeans that I’d actually buy, and my requirements are annoyingly specific: long length, dark denim wash, and frayed hems. Don’t just check one store. Use the public web to build me a serious comparison across 10 to 12 viable pairs from brands that are realistically buyable online in the U.S., including Abercrombie if they have a match. For each candidate, verify from the product page whether it clearly offers a long or tall length, a dark wash, and a frayed/raw hem; if one of those details is unclear, mark it as not shown instead of guessing. While comparing them, pay close attention to the details that will actually affect whether I’d keep them: inseam or length info, rise, stretch or fabric composition, price, available sizes, and whether customer photos/reviews make the wash and hem look the way the product page claims. Also check the return policy on each brand’s public site so I can avoid something that would be a pain to send back. Narrow everything down to the best 4 finalists, and for those 4, keep the product tabs open along with the most useful size-guide or return-policy tabs. In the end, give me one clear best overall pick, one best value pick, and one safest-to-order pick, with short reasons tied to the evidence you found.",
+  "source": "https://www.abercrombie.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.abercrombie.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.abercrombie.com",
+    "reference_length": 7,
+    "level": "hard"
+  }
+}

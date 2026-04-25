@@ -1,0 +1,51 @@
+{
+  "id": "d7696e89cb472203c4fe131625ff8a025b86e6e7",
+  "snapshot": "chrome",
+  "instruction": "I just got serious about buying a Nintendo Switch OLED for someone who is basically new to console gaming, and I do not want to waste money on random accessories that look useful but are not actually the right starter setup. Please build me a real browser-based buying guide that starts with the official Nintendo Switch OLED pages so you can verify what is actually compatible, then compare public product pages across Amazon plus at least two other major retailers like Best Buy, Target, Walmart, or GameStop. I want you to cover at least 5 categories that matter for a first setup: a screen protector, carrying case, extra controller option, microSD storage, and one charging or dock-friendly power accessory; if another category looks truly important, you can include it as optional. For each of those 5 required categories, compare exactly 3 viable products, so I end up with 15 compared items total, and note the product name, price, retailer, any obvious compatibility notes, and the main reason someone would pick it over the others. After that, turn the comparison into 3 complete starter bundles for different buyers: a lean budget bundle, a balanced everyday bundle, and a travel-or-multiplayer bundle. Each bundle should include exactly 5 to 7 items total, use only products you already checked, and clearly mark which items are essential versus optional. Also include one beginner-friendly first game recommendation and whether Nintendo Switch Online seems worth adding for that bundle. Keep the most useful evidence tabs open, including the official compatibility pages and at least one live product page for each required category, and finish with one clear recommendation for which bundle I should actually buy if I want the best overall value for a new Switch OLED owner.",
+  "source": "https://www.amazon.com",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.amazon.com"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high",
+  "metadata": {
+    "domain": "mind2web_chrome",
+    "website": "https://www.amazon.com",
+    "reference_length": 7,
+    "level": "hard"
+  }
+}
