@@ -20,7 +20,7 @@ Each task has the fields below.
 | `website` | Starting URL (always `https://www.google.com`) |
 | `level` | `easy`, `medium`, or `hard` |
 | `reference_length` | Reference step count |
-| `rubrics` | `{R1, R2, ...}` each with `requirement`, `verification`, and `weight` |
+| `rubrics` | `{R1, R2, ...}` each with `requirement` and `verification` |
 | `categories`, `num_categories` | SimilarWeb category tags |
 
 Difficulty is assigned by step count and domain spread. Easy tasks use at most 5 steps and 3 domains. Medium tasks use 6 to 8 steps or 4 or more domains. Hard tasks exceed both thresholds.
@@ -43,13 +43,24 @@ A pre-generated copy of all 200 tasks is checked in at [`data/odysseys_cua_final
 
 For each rubric item we prompt an LLM judge (we use `gemini-3.1-flash-lite-preview`) with the trajectory's step screenshots and actions plus the rubric. A rubric is satisfied (1) if any step in the trajectory satisfies it, else 0.
 
+Run the judge over a directory of OSWorld trajectories with [`scripts/python/run_full_trajectory_per_rubric.py`](scripts/python/run_full_trajectory_per_rubric.py). Each run directory must contain a `steps.jsonl` (or `traj.jsonl`) and the referenced screenshots; only runs with a numeric `result.txt` are scored unless `--include-incomplete` is set.
+
+```bash
+GEMINI_API_KEY=your-key python scripts/python/run_full_trajectory_per_rubric.py \
+  --model gemini-3.1-flash-lite-preview \
+  --runs-dir path/to/runs_dir \
+  --task-source-json data/odysseys.json \
+  --output path/to/eval_results_full_traj_per_rubric.json \
+  --num-workers 16
+```
+
+OpenAI-compatible models are also supported via `OPENAI_API_KEY` and `--api-base`. API keys may be provided through environment variables, CLI flags, or a `.env` file in the current directory (or via `--env-file path/to/.env`); install `python-dotenv` to enable `.env` loading. Results are written as JSON with per-rubric scores plus an aggregate `summary` broken down by difficulty level.
+
 We report two metrics per task. Averaged is the mean rubric score. Perfect is 1 if and only if every rubric is satisfied.
 
 We also report Trajectory Efficiency, the per-task averaged rubric score divided by step count, averaged across tasks.
 
-```
-Traj. Eff. = (1/N) · Σᵢ (sᵢ / nᵢ)
-```
+$$\text{Traj. Eff.} = \frac{1}{N} \sum_{i=1}^{N} \frac{s_i}{n_i}$$
 
 ## Results
 
@@ -78,5 +89,3 @@ Running Opus 4.6 with a 200-step budget raises the perfect rate from 44.5% to 76
   year={2026}
 }
 ```
-# Odysseys
-# Odysseys
