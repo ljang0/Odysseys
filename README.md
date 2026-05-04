@@ -2,7 +2,7 @@
 
 A benchmark of 200 long-horizon web-agent tasks drawn from real browsing sessions and evaluated on the live Internet with rubric-based scoring.
 
-* [Paper (PDF)](https://odysseys-website.pages.dev/assets/paper.pdf)
+* [Paper (PDF)](https://arxiv.org/pdf/2604.24964)
 * [Website](https://odysseys-website.pages.dev/)
 * [Leaderboard](https://odysseys-website.pages.dev/leaderboard.html)
 * [Task browser](https://odysseys-website.pages.dev/viewer.html)
