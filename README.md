@@ -62,9 +62,14 @@ We also report Trajectory Efficiency, the per-task averaged rubric score divided
 
 $$\text{Traj. Eff.} = \frac{1}{N} \sum_{i=1}^{N} \frac{s_i}{n_i}$$
 
+The `summary` block (and each `summary.by_level` entry) carries this as two keys:
+
+- `trajectory_efficiency` — raw value with `s_i` in `[0, 1]`, matching the formula above.
+- `trajectory_efficiency_x100` — the same value multiplied by 100, in the units used in the Results table below. Re-running on an existing output JSON regenerates these fields without re-querying the judge, since per-task records already carry `num_steps`.
+
 ## Results
 
-Numbers reproduced from Table 2 of the paper at a 100-step budget.
+Numbers reproduced from Table 2 of the paper at a 100-step budget. Trajectory Efficiency is reported in the paper-table units described above (raw value × 100).
 
 | Model | O-M2W Judge | Rubric Avg | Perfect | Avg. Steps | Traj. Eff. |
 |---|:-:|:-:|:-:|:-:|:-:|

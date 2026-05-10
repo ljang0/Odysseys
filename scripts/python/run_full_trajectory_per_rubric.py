@@ -352,23 +352,37 @@ async def main_async(args: argparse.Namespace) -> None:
     results = [results_by_key.get(str(run_dir)) or existing.get(str(run_dir)) for run_dir in run_dirs]
     results = [result for result in results if result is not None]
     all_scores = [score for result in results for score in (result.get("rubric_scores") or {}).values()]
+    # Trajectory Efficiency = (1/N) Σ s_i / n_i, where s_i is the per-task average rubric score
+    # (in [0,1]) and n_i is num_steps. Tasks with no recorded steps are skipped.
+    eff_terms = [r["average_rubric_score"] / r["num_steps"]
+                 for r in results
+                 if isinstance(r.get("num_steps"), int) and r["num_steps"] > 0
+                 and isinstance(r.get("average_rubric_score"), (int, float))]
+    traj_eff = sum(eff_terms) / len(eff_terms) if eff_terms else 0.0
     summary = {
         "total_tasks": len(results),
         "total_rubrics": len(all_scores),
         "average_rubric_score": round(sum(all_scores) / len(all_scores), 4) if all_scores else 0.0,
         "perfect_tasks": sum(1 for result in results if result.get("perfect")),
         "perfect_task_rate": round(sum(1 for result in results if result.get("perfect")) / len(results), 4) if results else 0.0,
+        "trajectory_efficiency": round(traj_eff, 6),
+        "trajectory_efficiency_x100": round(traj_eff * 100, 4),
         "errored_tasks": sum(1 for result in results if result.get("error")),
     }
     by_level = {}
     for result in results:
         level = task_index[result["task_id"]]["level"]
-        stats = by_level.setdefault(level, {"total_tasks": 0, "total_rubrics": 0, "score_sum": 0, "perfect_tasks": 0})
+        stats = by_level.setdefault(level, {"total_tasks": 0, "total_rubrics": 0, "score_sum": 0, "perfect_tasks": 0, "eff_sum": 0.0, "eff_n": 0})
         scores = list(result["rubric_scores"].values())
         stats["total_tasks"] += 1
         stats["total_rubrics"] += len(scores)
         stats["score_sum"] += sum(scores)
         stats["perfect_tasks"] += int(bool(result.get("perfect")))
+        n_steps = result.get("num_steps")
+        avg_score = result.get("average_rubric_score")
+        if isinstance(n_steps, int) and n_steps > 0 and isinstance(avg_score, (int, float)):
+            stats["eff_sum"] += avg_score / n_steps
+            stats["eff_n"] += 1
     if by_level:
         summary["by_level"] = {
             level: {
@@ -377,6 +391,8 @@ async def main_async(args: argparse.Namespace) -> None:
                 "average_rubric_score": round(stats["score_sum"] / stats["total_rubrics"], 4) if stats["total_rubrics"] else 0.0,
                 "perfect_tasks": stats["perfect_tasks"],
                 "perfect_task_rate": round(stats["perfect_tasks"] / stats["total_tasks"], 4) if stats["total_tasks"] else 0.0,
+                "trajectory_efficiency": round(stats["eff_sum"] / stats["eff_n"], 6) if stats["eff_n"] else 0.0,
+                "trajectory_efficiency_x100": round((stats["eff_sum"] / stats["eff_n"]) * 100, 4) if stats["eff_n"] else 0.0,
             }
             for level, stats in by_level.items()
         }
@@ -386,7 +402,7 @@ async def main_async(args: argparse.Namespace) -> None:
         json.dump(payload, f, indent=2, ensure_ascii=False)
     print(f"\nResults written to: {output_path}")
     if summary["total_rubrics"]:
-        print(f"Summary: average_rubric_score={summary['average_rubric_score']:.4f} over {summary['total_rubrics']} rubric(s) in {summary['total_tasks']} task(s); {summary['perfect_tasks']}/{summary['total_tasks']} perfect ({summary['perfect_task_rate']:.1%})")
+        print(f"Summary: average_rubric_score={summary['average_rubric_score']:.4f} over {summary['total_rubrics']} rubric(s) in {summary['total_tasks']} task(s); {summary['perfect_tasks']}/{summary['total_tasks']} perfect ({summary['perfect_task_rate']:.1%}); trajectory_efficiency={summary['trajectory_efficiency']:.6f} ({summary['trajectory_efficiency_x100']:.3f} ×100)")
     else:
         print(f"Summary: 0 rubrics scored across {summary['total_tasks']} task(s).")
 
