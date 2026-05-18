@@ -31,7 +31,7 @@ except ImportError:
     load_dotenv = None
 
 DEFAULT_MODEL = "gemini-3.1-flash-lite-preview"
-DEFAULT_MAX_IMAGES = 200
+DEFAULT_MAX_IMAGES = 0  # Keep all images
 FINAL_JUDGMENT_MAX_COMPLETION_TOKENS = 8192
 
 FULL_TRAJ_JUDGMENT_SYSTEM = """You are an expert evaluator of web-navigation agent trajectories.
@@ -418,7 +418,7 @@ def main() -> None:
     parser.add_argument("--gemini-api-key", default=None)
     parser.add_argument("--env-file", type=Path, default=None, help="Path to a .env file to load before reading API keys (default: ./.env if present).")
     parser.add_argument("--max-images", type=int, default=DEFAULT_MAX_IMAGES, help="Keep the last N screenshots per trajectory; 0 = unlimited.")
-    parser.add_argument("--max-steps", type=int, default=100, help="Only consider trajectory rows whose step_num <= this value; default/0 = unlimited.")
+    parser.add_argument("--max-steps", type=int, default=0, help="Only consider trajectory rows whose step_num <= this value; default/0 = unlimited.")
     parser.add_argument("--num-workers", type=int, default=1, help="Max concurrent runs.")
     parser.add_argument("--include-incomplete", action="store_true", default=False, help="Include runs without a numeric result.txt.")
     args = parser.parse_args()
